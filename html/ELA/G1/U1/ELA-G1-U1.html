@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Your Imagination World - Grade 1</title>
+  <link rel="stylesheet" href="../../../../css/ELA/G1/U1/ELA-G1-U1.css" />
+
+  <!-- ✅ Correct Fabric.js version (browser-ready UMD build) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js" ></script>
+
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <h1 class="loading-title">Loading Your Imagination World...</h1>
+        <p class="loading-text" id="loading-text">Loading... 0%</p>
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loading-bar"></div>
+      </div>
+  
+      <div class="loading-bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    </div>
+  </div>
+  
+
+  <!-- ✅ One global audio element -->
+<audio id="background-music" src="../../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+
+<!-- ✅ Global music toggle (always visible) -->
+<button id="music-toggle" class="music-control-btn bottom-right" title="Toggle Music">🔊</button>
+  <!-- Cover Screen -->
+  <div id="cover-screen" class="cover-screen">
+       <a href="../../../../html/ELA/G1/ELA-G1-UnitMap.html" class="cover-back-button" aria-label="Back to Unit Map">← Back</a>
+    <div class="cover-buttons-container">
+      <div class="cover-play-button-wrapper">
+        <button class="cover-play-button" id="play-button">
+          <span class="play-icon">▶</span>
+        </button>
+        <span class="button-label">Play Game</span>
+      </div>
+      <div class="cover-help-button-wrapper">
+        <button class="cover-help-button" id="help-button">
+          ?
+        </button>
+        <span class="button-label">How to Play</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <div id="instructions-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+      <h2 class="modal-title">How to Play</h2>
+      <ul class="instructions-list">
+        <li>Choose a background for your imagination world</li>
+        <li>Add fun characters to your world</li>
+        <li>Place objects and items your friends can use</li>
+        <li>Pick the weather for your world</li>
+        <li>Give your world a special name</li>
+        <li>Save your creation as a picture or animated GIF!</li>
+      </ul>
+      <button class="instructions-replay-btn"  onclick="replayInstructions()">
+     🔊 Replay Instructions
+      </button>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="game-container">
+
+      <!-- Left Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+         <div class="step-indicator">
+  <span id="step-title">Pick a Place</span>
+  <div class="step-number-row">
+    <span id="step-number">Step 1 of 5</span>
+    <button id="step-audio-btn" class="step-audio-btn" type="button">🔊</button>
+  </div>
+</div>
+
+        </div>
+
+        <div class="sidebar-content" id="sidebar-content">
+          <!-- Content will be dynamically loaded based on current step -->
+        </div>
+
+        <div class="sidebar-footer">
+          <button class="btn btn-secondary" onclick="previousStep()" id="btn-back">
+            ← Back
+          </button>
+          <button class="btn btn-primary" onclick="nextStep()" id="btn-next">
+            Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Canvas Area -->
+      <div class="canvas-area">
+        <div class="canvas-header">
+          <div class="canvas-title">Your Imagination World</div>
+          <div class="canvas-header-buttons">
+            <button class="btn-icon-only" onclick="returnToCover()" title="Back to Cover">
+              <span>🏠</span>
+            </button>
+            <button class="btn-icon-only" onclick="showHelp()" title="Show Controls">
+              <span>❓</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="canvas-wrapper">
+          <canvas id="imagination-canvas"></canvas>
+        </div>
+
+        <!-- Help Overlay -->
+        <div class="help-overlay" id="help-overlay" style="display: none;">
+          <button class="help-close" onclick="hideHelp()">×</button>
+          <div class="help-title">🎨 Canvas Controls</div>
+          <div class="help-item">
+            <div class="help-icon">👆</div>
+            <div class="help-text"><strong>Click</strong> to select</div>
+          </div>
+          <div class="help-item">
+            <div class="help-icon">✋</div>
+            <div class="help-text"><strong>Drag</strong> to move</div>
+          </div>
+          <div class="help-item">
+            <div class="help-icon">↔️</div>
+            <div class="help-text"><strong>Corners</strong> to resize</div>
+          </div>
+          <div class="help-item">
+            <div class="help-icon">🔄</div>
+            <div class="help-text"><strong>Top handle</strong> to rotate</div>
+          </div>
+          <div class="help-item">
+            <div class="help-icon">🗑️</div>
+            <div class="help-text"><strong>Delete key</strong> to remove</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Celebrate Screen -->
+  <div id="celebrate-screen" class="screen">
+    <div class="celebrate-content">
+      <div class="confetti" id="confetti"></div>
+      <h1 class="title celebrate-title"> Amazing! </h1>
+      <p class="subtitle">You created your Imagination World!</p>
+      <div id="world-name-display" class="world-name"></div>
+      <div class="celebrate-buttons">
+        <button class="btn-large btn-primary" onclick="saveWorld()">
+          💾 Save Picture
+        </button>
+        <button class="btn-large btn-secondary" onclick="playAgain()">
+          🔁 Play Again
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+<script src="../../../../js/ELA/G1/U1/ELA-G1-U1.js"></script>
+
+</body>
+</html>

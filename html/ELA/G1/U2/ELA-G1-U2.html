@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G1 Unit 2 - Color Shooting Game</title>
+  <!-- Use local stylesheet -->
+  <link rel="stylesheet" href="../../../../css/ELA/G1/U2/ELA-G1-U2.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <h1>Color Shooting Game</h1>
+    <p>Loading... <span id="loading-percent">0%</span></p>
+    <div class="progress-bar">
+      <div id="progress-fill" class="progress-fill"></div>
+      <div class="loading-bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+  </div>
+  <!-- ✅  Music Background  -->
+  <audio id="background-music" src="../../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+  <button id="music-toggle" class="music-control-btn bottom-right" title="Toggle Music">🔊</button>
+
+  <!-- Cover Screen -->
+  <div id="cover-screen" class="cover-screen">
+
+    <a href="../../../../html/ELA/G1/ELA-G1-UnitMap.html" class="cover-back-button" aria-label="Back to Unit Map">←
+      Back</a>
+    <div class="cover-buttons-container">
+      <div class="cover-play-button-wrapper">
+        <button class="cover-play-button" id="play-button">
+          <span class="play-icon">▶</span>
+        </button>
+        <span class="button-label">Play Game</span>
+      </div>
+      <div class="cover-help-button-wrapper">
+        <button class="cover-help-button" id="help-button">
+          ?
+        </button>
+        <span class="button-label">How to Play</span>
+      </div>
+    </div>
+  </div>
+  <!-- Game Container -->
+  <div id="game-container" class="game-container hidden">
+    <!-- Top Bar -->
+    <div class="topbar">
+      <button class="back-btn" id="back-btn">← Back</button>
+      <div class="question-container">
+        <p class="question-text" id="question-text"></p>
+      </div>
+      <div class="controls">
+        <button class="control-btn" id="hint-btn" title="Hint">💡</button>
+        <button class="control-btn" id="speak-btn" title="Play Question">🔊</button>
+        <button class="control-btn" id="stop-btn" title="Stop Sound">⏹️</button>
+      </div>
+    </div>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container">
+      <canvas id="game-canvas"></canvas>
+      <!-- <button id="start-round-btn" class="start-round-btn">Start Round</button> -->
+    </div>
+  </div>
+
+  <!-- Completion Screen -->
+  <div id="completion-screen" class="completion-screen hidden">
+    <div class="completion-content">
+      <img src="../../../../images/levelup.png" alt="Celebration" class="completion-image" />
+      <div class="completion-buttons">
+        <button class="replay-button" id="replay-button">🔄 Play Again</button>
+        <button class="home-button" id="home-button">🏠 Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <div id="instructions-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+      <h2 class="modal-title">How to Play</h2>
+      <ul class="instructions-list">
+        <li>Read the question at the top of the screen and identify the correct object in the picture</li>
+        <li><strong>On a computer (Mouse):</strong></li>
+        <li>Listen to Colors: Move your mouse over the color names to hear them spoken.</li>
+        <li>Select the Target: Click once on the moving target that has the correct color.</li>
+        <li><strong>On a tablet or iPad (touch):</strong></li>
+        <li>Listen to Colors: Tap the color words one time to hear them spoken.</li>
+        <li>Select the Target:Tap twice on the moving target that has the correct color to select the answer.</li>
+        <li>Use the 💡 hint button if you need help.</li>
+      </ul>
+      <button class="instructions-replay-btn" onclick="replayInstructions()">🔊 Replay Instructions</button>
+    </div>
+  </div>
+
+  <!-- Explanation Modal -->
+  <div id="explanation-modal" class="explanation-modal">
+    <div class="explanation-content">
+      <img src="../../../../images/learning_buddy.webp" alt="Learning Buddy" class="buddy-avatar">
+      <p id="explanation-text" class="explanation-text"></p>
+      <button id="continue-btn" class="continue-btn">Next Level ➡️</button>
+    </div>
+  </div>
+
+  <script src="../../.././../js/ELA/G1/U2/ELA-G1-U2.js"></script>
+</body>
+
+</html>

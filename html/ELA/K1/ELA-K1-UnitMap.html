@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ELA-K Island Adventure - Interactive Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../../css/ELA/K1/ELA-K1-UnitsMap.css" />
+  <style>
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #87CEEB 0%, #4A90E2 50%, #1E5F8C 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-content {
+      text-align: center;
+      color: white;
+    }
+
+    .loading-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #fff;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #FFD700;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 2rem auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-progress {
+      width: 300px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 1rem auto;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .loading-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #699bf7 0%, #4f86ff 50%, #2563eb 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(105, 155, 247, 0.5);
+    }
+
+    .loading-text {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      opacity: 0.95;
+      color: #E6F3FF;
+      font-weight: 600;
+    }
+
+    /* Hide main content until loaded */
+    body.loading .container {
+      visibility: hidden;
+    }
+
+    body.loaded .container {
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body class="loading">
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-title">🏝️ ELA K1 Islands Adventure</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-progress">
+        <div class="loading-progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="loading-text" id="loading-text">Loading assets...</div>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="background-music" src="../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+
+  <!-- Music Control Button -->
+  <button id="music-control" class="music-control-btn" onclick="toggleMusic()" title="Toggle Music">
+    🔊
+  </button>
+
+  
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-content">
+        <div class="ui-left">
+          <a href='../../../html/ELA/ELA-GridGrades.html' class="back-btn" id="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span class="label">Back</span>
+          </a>
+        </div>
+        
+        <div class="title-section">
+          <h1 class="main-title">ELA K1 Islands Adventure</h1>
+          <!-- <h2 class="sub-title">Explore the Learning Islands</h2> -->
+        </div>
+        
+        
+      </div>
+    </header>
+
+    <!-- Main Map Container -->
+    <main class="map-wrapper">
+      <div class="map-container">
+        <!-- Background Image -->
+        <div class="islands-background"></div>
+        
+        <!-- Compass -->
+        <div class="compass">
+          <i class="fas fa-compass"></i>
+        </div>
+        
+        
+        <!-- Island Hotspots -->
+        <div class="hotspots-container">
+          <!-- Top Row Islands -->
+          <button id="hotspot-1" class="hotspot attention" data-island="1"  data-route="../../../html/ELA/K1/Unit1/unified_five_senses_shooting_game.html">
+            <div class="hotspot-marker">
+              <span class="marker-number">1</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Phonics Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-2" class="hotspot" data-island="2"  data-route="../../../html/ELA/K1/Unit2/family_tree_complete.html">
+            <div class="hotspot-marker">
+              <span class="marker-number">2</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Reading Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-3" class="hotspot" data-island="3"  data-route="../../../html/ELA/K1/Unit3/community-helpers-final.html">
+            <div class="hotspot-marker">
+              <span class="marker-number">3</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Writing Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <!-- Bottom Row Islands -->
+          <button id="hotspot-4" class="hotspot" data-island="4"  >
+            <div class="hotspot-marker">
+              <span class="marker-number">4</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Vocabulary Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-5" class="hotspot" data-island="5" >
+            <div class="hotspot-marker">
+              <span class="marker-number">5</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Grammar Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-6" class="hotspot" data-island="6"  >
+            <div class="hotspot-marker">
+              <span class="marker-number">6</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Comprehension Island</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+        </div>
+        
+    
+        
+        <!-- Interactive Tooltip -->
+        <div id="tooltip" class="tooltip">
+          <div class="tooltip-content">
+            <h3 class="tooltip-title"></h3>
+            <p class="tooltip-description"></p>
+            <div class="tooltip-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../../js/ELA/K1/ELA-K1-UnitMap.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBELAS - STEAM Education Platform</title>
+    <link rel="stylesheet" href="./css/HomePage/MainPage.css">
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a class="logo" href="#home" aria-label="OBELAS Home">
+                <picture>
+                    <source srcset="./images/OBELASLOGOFINAL.webp" type="image/webp">
+                    <img src="./images/OBELAS LOGO FINAL.png" alt="OBELAS" class="logo-img" width="160" height="40"
+                        decoding="async" loading="eager">
+                </picture>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showHome()">Home</a></li>
+                <li><a href="#courses" onclick="showHome()">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>OBELAS Educational Games</h1>
+            <p>Redefining STEAM Education for Grades K-12</p>
+            <a href="#courses" class="cta-button" onclick="showHome()">Start Learning Adventure</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home Page - Course Selection -->
+            <div id="homepage">
+                <section class="courses-section" id="courses">
+                    <h2 class="section-title">Choose Your Subject</h2>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-icon">📚</div>
+                            <h3>ELA</h3>
+                            <p>Master reading, writing and communication skills through interactive lessons</p>
+                            <a href="./html/ELA/ELA-GridGrades.html" class="course-button">Explore ELA</a>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-icon">🧪</div>
+                            <h3>Science</h3>
+                            <p>Discover the wonders of biology, chemistry, physics through hands-on experiments</p>
+                            <a href="#" class="course-button">Explore Science</a>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-icon">📊</div>
+                            <h3>Mathematics</h3>
+                            <p>Solve problems using algebra, geometry, statistics, and calculus with interactive tools
+                            </p>
+                            <a href="#" class="course-button">Explore Math</a>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-icon">💻</div>
+                            <h3>Technology</h3>
+                            <p>Master coding, robotics, digital design, and emerging technologies</p>
+                            <a href="#" class="course-button">Explore Technology</a>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-icon">⚙️</div>
+                            <h3>Engineering</h3>
+                            <p>Design, build, and test solutions to real-world challenges</p>
+                            <a href="#" class="course-button">Explore Engineering</a>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-icon">🎨</div>
+                            <h3>Arts</h3>
+                            <p>Express creativity through digital art, music, design, and multimedia projects</p>
+                            <a href="#" class="course-button">Explore Arts</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Science Subjects Page -->
+            <div id="science-subjects" class="grade-selection">
+                <button class="back-button" onclick="showHome()">← Back to Courses</button>
+                <h2 class="section-title">Choose Science Subject</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">🧬</div>
+                        <h3>Biology</h3>
+                        <p>Explore life sciences, genetics, ecology, and human biology</p>
+                        <a href="#" class="course-button">Study Biology</a>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-icon">⚗️</div>
+                        <h3>Chemistry</h3>
+                        <p>Discover atoms, molecules, reactions, and chemical processes</p>
+                        <a href="#" class="course-button">Study Chemistry</a>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-icon">🔬</div>
+                        <h3>Physics</h3>
+                        <p>Understand forces, energy, waves, and the fundamental laws of nature</p>
+                        <a href="#" class="course-button">Study Physics</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade Selection Page -->
+            <div id="grade-selection" class="grade-selection">
+                <button class="back-button" onclick="goBack()">← Back</button>
+                <h2 class="section-title" id="grade-title">Select Your Grade</h2>
+                <div class="grade-grid" id="grade-grid">
+                    <!-- Grades will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Game Platform -->
+            <div id="game-platform" class="game-platform">
+                <button class="back-button" onclick="showGrades(currentSubject)">← Back to Grades</button>
+                <h2 id="platform-title">Learning Platform</h2>
+                <div class="game-interface">
+                    <h3 id="platform-subtitle">Welcome to your personalized learning experience!</h3>
+                    <p id="platform-description">Get ready to explore, learn, and have fun!</p>
+
+                    <div id="platform-buttons">
+                        <!-- Platform-specific buttons will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>OBELAS Platform</h4>
+                    <p>Empowering students through innovative STEAM education with hands-on learning experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#courses" onclick="showHome()">Courses</a></p>
+                    <p><a href="#grades">Grade Levels</a></p>
+                    <p><a href="#assess">Assessments</a></p>
+                    <p><a href="#support">Support</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: askme@obelas.com</p>
+                </div>
+            </div>
+            <p>&copy; 2025 OBELAS. All rights reserved. | Redefining Education</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const devMsg = 'This subject is still under development. Check back soon!';
+
+            // Select every course button on the page (home + science subjects)
+            const links = document.querySelectorAll('.courses-grid .course-card .course-button');
+
+            links.forEach((a) => {
+                const href = a.getAttribute('href') || '';
+                const isELA = href.includes('/ELA/'); // your ELA link already points to the ELA folder
+
+                if (!isELA) {
+                    // Prevent navigation and show the message
+                    a.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert(devMsg);
+                    });
+
+                    // (Optional) make it look disabled/coming soon
+                    a.setAttribute('aria-disabled', 'true');
+                    a.title = 'Coming soon';
+                }
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-menu-open');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    navLinks.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
+        /* ======== Background Music ======== */
+let musicPlaying = false;
+let musicAvailable = false;
+const bgMusic = document.getElementById('background-music');
+const musicBtn = document.getElementById('music-control');
+
+// Try to play automatically once the page loads
+window.addEventListener('load', () => {
+  if (!bgMusic) return;
+
+  bgMusic.addEventListener('canplay', () => {
+    musicAvailable = true;
+    bgMusic.volume = 0.5; // optional: adjust volume
+    bgMusic.play()
+      .then(() => {
+        musicPlaying = true;
+        musicBtn.textContent = '🔊';
+        console.log('Background music started automatically.');
+      })
+      .catch(err => {
+        console.warn('Autoplay was blocked by the browser.', err);
+        musicBtn.textContent = '🔇';
+      });
+  });
+
+
+});
+
+function toggleMusic() {
+
+
+  if (musicPlaying) {
+    bgMusic.pause();
+    musicBtn.textContent = '🔇';
+    musicPlaying = false;
+  } else {
+    bgMusic.play()
+      .then(() => {
+        musicBtn.textContent = '🔊';
+        musicPlaying = true;
+      })
+      .catch(err => {
+        console.log('Music play failed:', err);
+        alert('Unable to play music. Please check your browser settings.');
+      });
+  }
+}
+/**
+ * OBELAS Image Preloader
+ * Preloads all game images at the beginning to prevent loading delays during gameplay
+ */
+
+class ImagePreloader {
+    constructor() {
+        this.images = [];
+        this.loadedCount = 0;
+        this.totalImages = 0;
+        this.onProgressCallback = null;
+        this.onCompleteCallback = null;
+    }
+
+    /**
+     * Define all images that need to be preloaded
+     * Organized by category for better management
+     */
+    getImageList() {
+        return [
+            // Logo and UI
+            './images/OBELASLOGOFINAL.webp',
+            './images/learning_buddy.webp',
+            './images/level-up-congrats-blue-v2.webp',
+            
+            // Game Covers
+            './images/FamilyPuzzleGame_50kb_final.webp',
+            './images/fivesensesgamecover_new.webp',
+            './images/islands.webp',
+            './images/CommunityHelpers.png',
+            
+            // Family Members (256x256 portraits)
+            './images/mother_256.webp',
+            './images/father_256_clean.webp',
+            './images/brother_256.webp',
+            './images/sister_256.webp',
+            './images/grandmother_256.webp',
+            './images/grandfather_256.webp',
+            
+            // Story Backgrounds
+            './images/family_day_story_background.webp',
+            './images/family_tree_background.webp',
+            
+            // Story Scenes
+            './images/family_breakfast_cereal.webp',
+            './images/family_playing_ball.webp',
+            './images/family_playing_toy.webp',
+            './images/family_dinner_food.webp',
+            './images/family_bedtime_pillow.webp',
+            
+            // Objects/Items
+            './images/ball.webp',
+            './images/blanket.webp',
+            './images/milk.webp',
+            './images/pillow.webp',
+            './images/story_toy.webp'
+        ];
+    }
+
+    /**
+     * Start preloading all images
+     * @param {Function} onProgress - Callback function called on each image load (loaded, total)
+     * @param {Function} onComplete - Callback function called when all images are loaded
+     */
+    preload(onProgress, onComplete) {
+        this.onProgressCallback = onProgress;
+        this.onCompleteCallback = onComplete;
+        
+        const imageList = this.getImageList();
+        this.totalImages = imageList.length;
+        this.loadedCount = 0;
+
+        console.log(`Starting to preload ${this.totalImages} images...`);
+
+        // Create promises for all images
+        const loadPromises = imageList.map(src => this.loadImage(src));
+
+        // Wait for all images to load (or fail gracefully)
+        Promise.allSettled(loadPromises).then(results => {
+            const successful = results.filter(r => r.status === 'fulfilled').length;
+            const failed = results.filter(r => r.status === 'rejected').length;
+            
+            console.log(`Preloading complete: ${successful} successful, ${failed} failed`);
+            
+            if (this.onCompleteCallback) {
+                this.onCompleteCallback(successful, failed);
+            }
+        });
+    }
+
+    /**
+     * Load a single image
+     * @param {string} src - Image source path
+     * @returns {Promise} Promise that resolves when image loads
+     */
+    loadImage(src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            
+            img.onload = () => {
+                this.loadedCount++;
+                console.log(`Loaded: ${src} (${this.loadedCount}/${this.totalImages})`);
+                
+                if (this.onProgressCallback) {
+                    this.onProgressCallback(this.loadedCount, this.totalImages);
+                }
+                
+                resolve(img);
+            };
+            
+            img.onerror = () => {
+                this.loadedCount++;
+                console.warn(`Failed to load: ${src}`);
+                
+                if (this.onProgressCallback) {
+                    this.onProgressCallback(this.loadedCount, this.totalImages);
+                }
+                
+                // Still resolve to not block other images
+                reject(new Error(`Failed to load ${src}`));
+            };
+            
+            img.src = src;
+            this.images.push(img);
+        });
+    }
+
+    /**
+     * Get all preloaded images
+     * @returns {Array} Array of Image objects
+     */
+    getImages() {
+        return this.images;
+    }
+}
+
+// Create global instance
+window.imagePreloader = new ImagePreloader();
+
+
+    </script>
