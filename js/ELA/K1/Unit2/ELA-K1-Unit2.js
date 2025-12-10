@@ -35,8 +35,10 @@ const imagePaths = [
   '../../../../images/pillow.webp',
   '../../../../images/blanket.webp',
   '../../../../images/learning_buddy.webp',
-  '../../../../images/level-up-congrats-blue-v2.webp',
-  '../../../../images/K1/U2/FamilyPuzzleGame_50kb_final.webp'
+  // '../../../../images/level-up-congrats-blue-v2.webp',
+  '../../../../images/K1/U2/FamilyPuzzleGame.png',
+    '../../../../images/levelup.png'
+
 ];
 
 const audioPaths = [
@@ -54,7 +56,7 @@ const audioPaths = [
 ];
 
 const LEVEL_STORAGE_KEY = 'familyTreeLevel';
-const LEVEL_UP_IMG_SRC = '../../../../images/level-up-congrats-blue-v2.webp';
+const LEVEL_UP_IMG_SRC = '../../../../images/levelup.png';
 // Loading screen elements
 const loadingScreen = document.getElementById('loading-screen');
 const progressBar = document.getElementById('loading-progress');
@@ -159,7 +161,7 @@ const audioMap = {
   'Try again. We are matching the picture with the word "grandmother". A grandmother is an older woman in your family.': "../../../../audio/K1/U2/K1-U2-4-tryagainExplanation.mp3",
   'Try again. We are matching the picture with the word "sister". A sister is a girl in your family.': "../../../../audio/K1/U2/K1-U2-5-tryagainExplanation.mp3",
   'Try again. We are matching the picture with the word "grandfather". A grandfather is an older man in your family.': "../../../../audio/K1/U2/K1-U2-6-tryagainExplanation.mp3",
-   "Family Tree Complete! 🎉": "../../../../audio/K1/U2/K1-U2-l1.mp3",
+   "Family Tree Complete!": "../../../../audio/K1/U2/K1-U2-l1.mp3",
 };
 
 function speakText(key) {
@@ -372,22 +374,107 @@ function closeInstructions() {
 
 }
 
-/* ======== Menu ======== */
-function startGame() {
-  document.getElementById('cover-screen').classList.add('hidden');
-  document.getElementById('game-container').classList.add('active');
-  startBackgroundMusic();
-  initializeGame();
+function showGameComplete() {
+  localStorage.setItem('familyTreeLevel', String(parseInt(localStorage.getItem('familyTreeLevel') || '0') + 1));
+
+  document.querySelector('.topbar')?.style.setProperty('display', 'none', 'important');
+  document.querySelector('.main-game-area')?.style.setProperty('display', 'none', 'important'); // ← your real class
+  document.getElementById('game-container')?.classList.remove('active');
+
+  document.getElementById('levelup-overlay')?.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'levelup-overlay';
+  overlay.className = 'levelup-fullpage-overlay';
+  overlay.innerHTML = `
+    <div class="levelup-fullpage-content">
+      <img class="levelup-fullpage-image" src="../../../../images/levelup.png" alt="Level Up!">
+      <div class="levelup-buttons-top">
+        <button onclick="restartGame()" class="levelup-btn-top play-again">Play Again</button>
+        <a href="../../../../html/ELA/K1/ELA-K1-UnitMap.html" class="levelup-btn-top back-map">Back to Map</a>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  speakText("Family Tree Complete!");
+  playApplauseSound();
+  setTimeout(() => launchFireworks(innerWidth/2, innerHeight/3), 300);
+  setTimeout(() => launchFireworks(innerWidth/3, innerHeight/2), 700);
+  setTimeout(() => launchFireworks(innerWidth*0.7, innerHeight/2), 1100);
 }
 
-function backToMenu() {
-  document.getElementById('cover-screen').classList.remove('hidden');
+function restartGame() {
+  stopAudio();
+  stopApplause();
+  const bgMusic = document.getElementById('background-music');
+  if (bgMusic) { bgMusic.pause(); bgMusic.currentTime = 0; }
+
+  document.getElementById('levelup-overlay')?.remove();
+
+  document.querySelector('.topbar')?.style.setProperty('display', 'flex', 'important');
+  document.querySelector('.main-game-area')?.style.setProperty('display', 'block', 'important');
+
+  currentRound = currentScenario = storyIndex = 0;
+  currentPhase = 2;
+  inStoryMode = false;
+  revealedMembers.clear();
+  revealedStoryItems.clear();
+  resetFamilyTree();
+  resetStoryBook();
+
+  const cover = document.getElementById('cover-screen');
+  cover.style.display = 'flex';
+  cover.classList.remove('hidden');
   document.getElementById('game-container').classList.remove('active');
-  resetGame();
+
+  setTimeout(() => bgMusic?.play().catch(() => {}), 600);
 }
 
-function backToActivities() { 
-  backToMenu(); 
+function startGame() {
+  const cover = document.getElementById('cover-screen');
+  const gameContainer = document.getElementById('game-container');
+
+  cover.classList.add('hidden');
+
+    cover.style.display = 'none';
+    gameContainer.classList.add('active');          
+    document.querySelector('.main-game-area').style.display = 'block'; 
+    initializeGame();
+}
+
+function backToActivities() {
+  // Stop everything
+  stopAudio();
+  stopApplause();
+
+  // Reset all game state (same as restart)
+  currentRound = 0;
+  currentScenario = 0;
+  currentPhase = 2;
+  revealedMembers.clear();
+  revealedStoryItems.clear();
+  inStoryMode = false;
+  storyIndex = 0;
+
+  // Reset visuals
+  resetFamilyTree();
+  resetStoryBook();
+
+  // Hide game completely
+  document.getElementById('game-container').classList.remove('active');
+  document.querySelector('.main-game-area')?.style.setProperty('display', 'none', 'important');
+
+  // Show cover screen with smooth animation (exactly like Five Senses)
+  const cover = document.getElementById('cover-screen');
+  cover.style.display = 'flex';
+  requestAnimationFrame(() => {
+    cover.classList.remove('hidden');
+  });
+
+  // Restart background music
+  const bgMusic = document.getElementById('background-music');
+  setTimeout(() => bgMusic?.play().catch(() => {}), 600);
 }
 
 function chooseLevel() { 
@@ -535,11 +622,7 @@ function showExplanation(correct, explanationText, callback) {
     const cy = window.innerHeight / 2;
     launchFireworks(cx, cy);
   }
-
-  // Speak feedback (2 sec delay ONLY if correct)
-  setTimeout(() => {
     speakText(explanationText);
-  }, correct ? 2000 : 0);
 
   // Save the callback so the continue button can trigger it
   explanationNextStep = callback;
@@ -720,14 +803,17 @@ function showFireworks() {
 }
 function completeScenario() {
   currentScenario++;
+
   const round = gameRounds[currentRound];
   if (currentScenario >= round.scenarios.length) {
-    showSectionComplete('Family Tree Complete! 🎉');
-  } else {
-    loadScenario();
+    // THIS IS THE LAST QUESTION (grandfather) → go straight to level-up
+    showGameComplete();          // ← this now shows the full level-up overlay
+    return;
   }
-}
 
+  // otherwise continue to next family member
+  loadScenario();
+}
 function showSectionComplete(message) {
   setInstruction('Great! Continue to the next part.');
   speakThen('Great job building your family! Now, help with our day together.', () => startStoryMode());
@@ -835,26 +921,26 @@ function buildStoryFeedback(isCorrect, scenario, pickedKey) {
 }
 
 /* ======== End Game ======== */
-function showGameComplete() {
-  // Hide all game sections
-  document.getElementById('phase1').classList.add('hidden');
-  document.getElementById('phase2').classList.remove('active');
-  document.getElementById('story-section').classList.remove('active');
-  document.getElementById('story-section').style.display = 'none';
+// function showGameComplete() {
+//   // Hide all game sections
+//   document.getElementById('phase1').classList.add('hidden');
+//   document.getElementById('phase2').classList.remove('active');
+//   document.getElementById('story-section').classList.remove('active');
+//   document.getElementById('story-section').style.display = 'none';
   
-  // Show level-up overlay
-  const completeText = "Congratulations! You've completed the Family Tree and Day with My Family!";
-  currentAudioText = completeText;
-  speakText(completeText);
+//   // Show level-up overlay
+//   const completeText = "Family Tree Complete!";
+//   currentAudioText = completeText;
+//   speakText(completeText);
   
-  // Launch fireworks
-  setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 2), 200);
-  setTimeout(() => launchFireworks(window.innerWidth / 3, window.innerHeight / 2), 500);
-  setTimeout(() => launchFireworks(window.innerWidth * 0.7, window.innerHeight / 2), 800);
+//   // Launch fireworks
+//   setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 2), 200);
+//   setTimeout(() => launchFireworks(window.innerWidth / 3, window.innerHeight / 2), 500);
+//   setTimeout(() => launchFireworks(window.innerWidth * 0.7, window.innerHeight / 2), 800);
   
-  // Show the level-up overlay
-  showLevelUpOverlay();
-}
+//   // Show the level-up overlay
+//   showLevelUpOverlay();
+// }
 
 function launchFireworks(x, y) {
   for (let i = 0; i < 15; i++) {
@@ -962,10 +1048,105 @@ function replayQuestion() {
 }
 
 function showLevelUpOverlay() {
-  const overlay = document.getElementById('level-up-overlay');
-  overlay.style.display = 'flex';
-  speakText("Level up! Congratulations! You completed the Family Tree and Day with My Family!");
-  setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 2), 300);
+  // Hide the entire game (topbar + game area)
+  const topbar = document.querySelector('.topbar');
+  const gameArea = document.querySelector('.game-area');
+  if (topbar) topbar.style.display = 'none';
+  if (gameArea) gameArea.style.display = 'none';
+
+  // Remove any old overlay
+  const old = document.getElementById('levelup-overlay');
+  if (old) old.remove();
+
+  // Create full-screen level-up overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'levelup-overlay';
+  overlay.className = 'levelup-fullpage-overlay';
+  overlay.innerHTML = `
+    <div class="levelup-fullpage-content">
+      <img class="levelup-fullpage-image" 
+           src="../../../../images/levelup.png" 
+           alt="Level up! Congratulations!">
+      <div class="levelup-buttons-top">
+        <button onclick="restartGame()" class="levelup-btn-top play-again">
+          Play Again
+        </button>
+        <a href="../../../../html/ELA/K1/ELA-K1-UnitMap.html" 
+           class="levelup-btn-top back-map">
+          Back to Map </a>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Celebration
+  speakText("Family Tree Complete!");
+  playApplauseSound();
+
+  // Fireworks
+  setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 3), 300);
+  setTimeout(() => launchFireworks(window.innerWidth / 3, window.innerHeight / 2), 700);
+  setTimeout(() => launchFireworks(window.innerWidth * 0.7, window.innerHeight / 2), 1100);
+
+  // Save progress
+  const prev = parseInt(localStorage.getItem('familyTreeLevel') || '0', 10);
+  localStorage.setItem('familyTreeLevel', String(prev + 1));
+}
+// function restartGame() {
+//   // Stop all sounds
+//   stopAudio();
+//   stopApplause();
+//   const bgMusic = document.getElementById('background-music');
+//   if (bgMusic) {
+//     bgMusic.pause();
+//     bgMusic.currentTime = 0;
+//   }
+
+//   // Remove the level-up overlay completely
+//   const overlay = document.getElementById('levelup-overlay');
+//   if (overlay) overlay.remove();
+
+//   // Show topbar again
+//   const topbar = document.querySelector('.topbar');
+//   if (topbar) topbar.style.display = 'flex';
+
+//   // Reset all game state
+//   currentRound = 0;
+//   currentScenario = 0;
+//   currentPhase = 2;
+//   revealedMembers.clear();
+
+//   // Reset family tree visuals
+//   resetFamilyTree();
+
+//   // === THIS IS THE KEY PART (same as Five Senses game) ===
+//   const coverScreen = document.getElementById('cover-screen');
+//   const gameContainer = document.getElementById('game-container');
+
+//   coverScreen.style.display = 'flex';
+//   coverScreen.classList.remove('hidden');
+//   gameContainer.classList.remove('active');
+
+//   // Restart background music after a tiny delay
+//   setTimeout(() => {
+//     if (bgMusic) bgMusic.play().catch(() => {});
+//   }, 600);
+// }
+function setEndStateUI(on) {
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+  if (on) {
+    topbar.classList.add('end-state');
+  } else {
+    topbar.classList.remove('end-state');
+  }
+}let applauseEl = null;
+let applauseTimer = null;
+function stopApplause() {
+    try {
+        if (applauseTimer) { clearTimeout(applauseTimer); applauseTimer = null; }
+        if (applauseEl) { applauseEl.pause(); applauseEl.currentTime = 0; }
+    } catch (e) { console.log("Stop applause error:", e); }
 }
 window.addEventListener('load', () => {
     const audio = document.getElementById('background-music');
