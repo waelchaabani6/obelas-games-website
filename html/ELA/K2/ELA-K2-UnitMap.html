@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ELA-K2 Space Adventure - Interactive Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../../css/ELA/K2/ELA-K2-UnitsMap.css" />
+</head>
+
+<body>
+
+<!-- Stylish Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <div class="rocket-icon">🚀</div>
+    <h2 class="loading-title">Launching Your Space Adventure...</h2>
+    <p id="loading-text" class="loading-text">Preparing planets... 0%</p>
+    <div class="loading-bar">
+      <div class="loading-progress" id="loading-progress"></div>
+    </div>
+    <div class="loading-stars">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ One global audio element -->
+<audio id="background-music" src="../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+
+<!-- ✅ Global music toggle (always visible) -->
+<button id="music-toggle" class="music-control-btn bottom-right" title="Toggle Music">🔊</button>
+
+
+  
+  <div id="container" class="container" class="hidden" >
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-content">
+        <div class="ui-left">
+          <a href='../../../html/ELA/ELA-GridGrades.html' class="back-btn" id="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span class="label">Back</span>
+          </a>
+        </div>
+        
+        <div class="title-section">
+          <h1 class="main-title">ELA K2 Space Adventure</h1>
+        </div>
+        
+        
+      </div>
+    </header>
+
+    <!-- Main Map Container -->
+    <main class="map-wrapper">
+      <div class="map-container">
+        <!-- Background Image -->
+        <div class="space-background"></div>
+        
+        <!-- Rocket Ship (instead of compass) -->
+        <div class="rocket-ship">
+          <i class="fas fa-rocket"></i>
+        </div>
+        
+        
+        <!-- Planet Hotspots -->
+        <div class="hotspots-container">
+          <!-- Top Row Planets -->
+          <button id="hotspot-1" class="hotspot attention" data-planet="1" data-route="../../../html/ELA/K2/U1/ELA-K2-U1.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">1</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Children Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-2" class="hotspot" data-planet="2" data-route="../../../html/ELA/K2/U2/ELA-K2-U2.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">2</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Family Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-3" class="hotspot" data-planet="3" data-route="../../../html/ELA/K2/U3/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">3</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">School Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-4" class="hotspot" data-planet="4" data-route="../../../html/ELA/K2/U4/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">4</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Weather Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <!-- Bottom Row Planets -->
+          <button id="hotspot-5" class="hotspot" data-planet="5" data-route="../../../html/ELA/K2/U5/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">5</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Animal Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-6" class="hotspot" data-planet="6" data-route="../../../html/ELA/K2/U6/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">6</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Food Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-7" class="hotspot" data-planet="7" data-route="../../../html/ELA/K2/U7/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">7</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Travel Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+          
+          <button id="hotspot-8" class="hotspot" data-planet="8" data-route="../../../html/ELA/K2/U8/index.html">
+            <div class="hotspot-marker planet-marker">
+              <span class="marker-number">8</span>
+              <div class="marker-glow"></div>
+            </div>
+            <span class="hotspot-label">Fun Planet</span>
+            <div class="completion-badge">
+              <i class="fas fa-star"></i>
+            </div>
+          </button>
+        </div>
+        
+    
+        
+        <!-- Interactive Tooltip -->
+        <div id="tooltip" class="tooltip">
+          <div class="tooltip-content">
+            <h3 class="tooltip-title"></h3>
+            <p class="tooltip-description"></p>
+            <div class="tooltip-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../../js/ELA/K2/ELA-K2-UnitMap.js"></script>
+</div>
+</body>
+</html>
+

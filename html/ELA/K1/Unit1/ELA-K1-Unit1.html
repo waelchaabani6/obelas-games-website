@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Senses Shooting Game (Improved)</title>
+    <link rel="stylesheet" href="../../../../css/ELA/K1/Unit1/ELA-K1-Unit1.css" />
+
+</head>
+<body>
+   <!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <h2 class="loading-title">Five Senses Shooting Game</h2>
+    <p id="loading-text" class="loading-text">Loading... 0%</p>
+    <div class="loading-bar">
+      <div class="loading-progress" id="loading-progress"></div>
+    </div>
+    <div class="loading-bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+<button id="music-toggle" class="music-control-btn bottom-right" title="Toggle Music">🔊</button>
+<audio id="background-music" src="../../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+
+ <!-- Cover Screen -->
+<div id="cover-screen" class="cover-screen hidden">
+   <a href="../../../../html/ELA/K1/ELA-K1-UnitMap.html" class="cover-back-button" aria-label="Back to Unit Map">← Back</a>
+
+
+
+    <div class="cover-buttons-container">
+      <div class="cover-play-button-wrapper">
+        <button class="cover-play-button" onclick="startGame()" aria-label="Start the game">
+          <span class="play-icon" aria-hidden="true">▶</span>
+        </button>
+        <span class="button-label">Play Game</span>
+      </div>
+      <div class="cover-help-button-wrapper">
+        <button class="cover-help-button" onclick="showHowToPlay()" aria-label="How to play">
+          <span aria-hidden="true">?</span>
+        </button>
+        <span class="button-label">How to Play</span>
+      </div>
+    </div>
+</div>
+
+<!-- Instructions Modal -->
+<div id="instructions-modal" class="instructions-modal">
+  <div class="instructions-content">
+     <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+    <h2 class="instructions-title"> How to Play</h2>
+    <ul class="instructions-list">
+      <li><strong>Press the green play button</strong> to start the game!</li>
+      <li><strong>Listen carefully</strong> to the question about the five senses.</li>
+      <li><strong>Click on balloons</strong> to pop them and find the correct answer.</li>
+      <li><strong>Use the hint button</strong> (💡) if you need help.</li>
+      <li><strong>Click the speaker button</strong> (🔊) to hear the question again.</li>
+      <li><strong>Click the stop button</strong> (⏹️) to stop all sounds.</li>
+    </ul>
+    <button class="instructions-replay-btn" onclick="replayInstructions()">
+      🔊 Replay Instructions
+    </button>
+  </div>
+</div>
+  <div id="game-container" class="game-container">
+    <div class="question-area">
+      <div class="topbar">
+        <button class="back-btn" onclick="backToActivities()" aria-label="Back to cover">← Back <span class="sr-only">Back</span></button>
+        <div id="question-text" class="question-text">Find the letter S to start the word SEE!</div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button id="hint-btn" class="hint-btn" onclick="playHint()" title="Get a hint for the answer" aria-label="Play a hint">
+            <span aria-hidden="true">💡</span><span class="sr-only">Hint</span>
+          </button>
+          <button id="read-question-btn" class="speak-btn" onclick="playQuestion()" title="Hear the question again" aria-label="Read the question aloud">
+            <span aria-hidden="true">🔊</span><span class="sr-only">Read question</span>
+          </button>
+          <button id="stop-sound-btn" class="stop-btn" onclick="stopAudio()" title="Stop all sounds" aria-label="Stop sound">
+            <span aria-hidden="true">⏹️</span><span class="sr-only">Stop sound</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="game-area" class="game-area">
+        <canvas id="shooting-canvas" class="shooting-canvas" width="800" height="400" aria-label="Shooting game area"></canvas>
+        <button id="play-button" class="play-button" onclick="startShootingGame()" aria-label="Start round">
+          <span aria-hidden="true">▶</span><span class="sr-only">Start round</span>
+        </button>
+      </div>
+
+      <button id="next-btn" class="next-btn" style="display:none">Next Question →</button>
+    </div>
+  </div>
+<div id="level-up-overlay" class="level-up-overlay">
+  <div class="level-up-content">
+    <img src="../../../../images/level-up-congrats-blue-v2.webp" alt="Level Up" class="level-up-img" />
+    <button class="next-round-btn" onclick="backToMenu()">Back to Menu</button>
+  </div>
+</div>
+  <!-- <div id="explanation-overlay" class="explanation-overlay" aria-modal="true" role="dialog" aria-label="Feedback">
+    <div class="explanation-content">
+      <div class="explanation-avatar">
+        <picture>
+          <source type="image/webp" srcset="../../../../images/learning_buddy.webp">
+          <img class="buddy-avatar" src="../../../../images/learning_buddy.webp" alt="Learning Buddy smiling" loading="lazy" decoding="async" width="120" height="120" />
+        </picture>
+      </div>
+      <div class="explanation-title" id="explanation-title">Well done!</div>
+      <div id="explanation-text" class="explanation-text"></div>
+      <div class="explanation-buttons">
+        <button class="explanation-btn replay-btn" onclick="replayQuestion()" aria-label="Replay question">Replay</button>
+        <button class="explanation-btn continue-btn" onclick="continueGame()" aria-label="Continue to next question">Continue</button>
+      </div>
+    </div>
+  </div> -->
+
+ <!-- Explanation Modal -->
+<div id="explanation-modal" class="explanation-modal">
+  <div class="explanation-content">
+  <div class="explanation-avatar">
+        <picture>
+          <source type="image/webp" srcset="../../../../images/learning_buddy.webp">
+          <img class="buddy-avatar" src="../../../../images/learning_buddy.webp" alt="Learning Buddy smiling" loading="lazy" decoding="async" width="120" height="120" />
+        </picture>
+      </div>
+    <h2 id="explanation-title" class="explanation-title"></h2>
+    <p id="explanation-text" class="explanation-text"></p>
+    <button id="continue-button"onclick="continueGame()" class="continue-button">Next Level ➡️</button>
+  </div>
+</div>
+
+
+<script src="../../../../js/ELA/K1/Unit1/ELA-K1-Unit1.js"></script>
+</body>
+</html>

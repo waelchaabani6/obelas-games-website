@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KG2 Unit 1 - Matching Card Game</title>
+  <!-- Use local stylesheet -->
+  <link rel="stylesheet" href="../../../../css/ELA/G2/U1/ELA-G2-U1.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <h2 class="loading-title"> Important People Match-Up</h2>
+    <p id="loading-text" class="loading-text">Loading... 0%</p>
+    <div class="loading-bar">
+      <div class="loading-progress" id="loading-progress"></div>
+    </div>
+    <div class="loading-bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+<!-- ✅ One global audio element -->
+<audio id="background-music" src="../../../../audio/kids-game-gaming-background-music-295075.mp3" loop></audio>
+
+<!-- ✅ Global music toggle (always visible) -->
+<button id="music-toggle" class="music-control-btn bottom-right" title="Toggle Music">🔊</button>
+  <!-- Cover Screen -->
+<div id="cover-screen" class="cover-screen hidden">
+   <a href="../../../../html/ELA/G2/ELA-G2-UnitMap.html" class="cover-back-button" aria-label="Back to Unit Map">← Back</a>
+
+
+
+    <div class="cover-buttons-container">
+      <div class="cover-play-button-wrapper">
+        <button class="cover-play-button" onclick="startGame()" aria-label="Start the game">
+          <span class="play-icon" aria-hidden="true">▶</span>
+        </button>
+        <span class="button-label">Play Game</span>
+      </div>
+      <div class="cover-help-button-wrapper">
+        <button class="cover-help-button" onclick="showHowToPlay()" aria-label="How to play">
+          <span aria-hidden="true">?</span>
+        </button>
+        <span class="button-label">How to Play</span>
+      </div>
+    </div>
+  </div>
+<div id="instructions-modal" class="instructions-modal">
+  <div class="instructions-content">
+     <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+    <h2 class="instructions-title"> How to Play</h2>
+    <ul class="instructions-list">
+      <li>Press the green play button to start the game!</li>
+      <li>Look carefully at the pictures on the cards.</li>
+      <li>Click two cards to flip them and find a match.</li>
+      <li>Use the hint button (💡) if you need help.</li>
+      <li>Use the speaker button (🔊) to hear the question again.</li>
+      <li>Click the stop button(⏹️) to stop all sounds.</li>
+    </ul>
+    <button class="instructions-replay-btn" onclick="replayInstructions()">
+      🔊 Replay Instructions
+    </button>
+  </div>
+</div>
+<div id="instructions-selection-game-modal" class="instructions-modal">
+  <div class="instructions-content">
+     <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+    <h2 class="instructions-title"> How to Choose</h2>
+    <ul class="instructions-list">
+      <li>Look at the pictures.</li>
+      <li>Choose the person who inspires you.</li>
+      <li> If none of them are your role model, choose ‘Someone else.</li>
+      <li>Use the hint button (💡) if you need help.</li>
+      <li>Use the speaker button (🔊) to hear the question again.</li>
+      <li>Click the stop button(⏹️) to stop all sounds.</li>
+    </ul>
+    <button class="instructions-replay-btn" onclick="replayInstructionshowtochoosegame()">
+      🔊 Replay Instructions
+    </button>
+  </div>
+</div>
+  <!-- Game Container -->
+  <div id="game-container" class="game-container hidden">
+    <!-- Top Bar -->
+    <div class="topbar">
+      <button class="back-button" onclick="backToHome()">← Back</button>
+      <div class="question-container">
+        <p class="question-text" id="question-text">Match the rhyming words!</p>
+      </div>
+      <div class="controls">
+        <button class="control-button" onclick="playHint()" title="Hint">💡</button>
+        <button class="control-button" onclick="playQuestion()" title="Play Question">🔊</button>
+        <button class="control-button" onclick="stopSpeech()" title="Stop Sound">⏹️</button>
+        <button class="control-button how-to-play-game-btn" onclick="showHowToPlayselection()" title="How to Choose">?</button>
+      </div>
+    </div>
+
+
+    <!-- Score Display -->
+    <div class="score-display" id="score-display">
+      <span>Level: <span id="level-number">1</span></span>
+      <span>Matches: <span id="matches-found">0</span>/<span id="total-matches">3</span></span>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="cards-grid"></div>
+  </div>
+
+  <!-- Explanation Modal (kept generic "modal" but will now have overlay styles) -->
+<div id="explanation-modal" class="explanation-modal">
+  <div class="explanation-content">
+    <img src="../../../../images/learning_buddy.webp" alt="Learning Buddy" class="buddy-avatar">
+    <h3 id="explanation-title" class="explanation-title"></h3>
+    <p id="explanation-text" class="explanation-text"></p>
+
+    <button class="continue-button" onclick="nextLevel()">
+      Next Level ➡️
+    </button>
+  </div>
+</div>
+
+
+  <!-- Completion Screen -->
+  <div id="completion-screen" class="completion-screen hidden">
+    <div class="completion-content">
+      <img src="../../../../images/levelup.png" alt="Celebration" class="completion-image" />
+      <div class="completion-buttons">
+        <button class="replay-button" id="replay-button">🔄 Play Again</button>
+        <button class="home-button" id="home-button">🏠 Home</button>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="../../.././../js/ELA/G2/U1/ELA-G2-U1.js"></script>
+</body>
+</html>

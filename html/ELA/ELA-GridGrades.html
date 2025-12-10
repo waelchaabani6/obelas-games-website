@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELA - OBELAS</title>
+  <link rel="stylesheet" href="../../css/ELA/ELA-GridGrades.css">
+  <script src="../../js/ELA/grades.js"></script>
+  <script src="../../js/ELA/platform.js"></script>
+</head>
+<body>
+  <header>
+    <a href="../../MainPage.html" class="back-button">← Back to Courses</a>
+    <h1>ELA</h1>
+  </header>
+
+  <main class="layout">
+    <div class="layout-container">
+      <!-- Content header with title on left and tabs on right -->
+      <header class="content-header" aria-label="Controls">
+        <h2 class="section-title">Choose Your Grade</h2>
+        
+        <nav class="band-tabs" role="tablist" aria-label="Grade bands">
+          <button class="band-tab is-active" role="tab" aria-selected="true" data-band="k5">K–5</button>
+          <button class="band-tab" role="tab" aria-selected="false" data-band="68">6–8</button>
+          <button class="band-tab" role="tab" aria-selected="false" data-band="912">9–12</button>
+        </nav>
+      </header>
+
+      <!-- Grade grid content (blue grade cards will appear here) -->
+      <section class="content">
+        <div class="grade-grid" id="grade-grid">
+          <!-- Grade cards will be dynamically inserted here by grades.js -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 OBELAS</p>
+  </footer>
+
+  <script>
+    // Initialize grade bands - this populates the grade-grid with blue cards
+    initGradeBands("ELA", "k5");
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Tree + Day With My Family</title>
+      <link rel="stylesheet" href="../../../../css/ELA/K1/Unit2/ELA-K1-Unit2.css" />
+
+</head>
+
+<body>
+  <!-- ===== COVER SCREEN ===== -->
+  <div id="cover-screen" class="cover-screen">
+    <a href="../../../../html/ELA/K1/ELA-K1-UnitMap.html" class="cover-back-button" aria-label="Back to Unit Map">
+      ← Back
+    </a>
+    <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="../../../../audio/kids-game-gaming-background-music-295075.mp3" type="audio/mpeg">
+  </audio>
+  
+     <!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <h2 class="loading-title">Family Tree + Day With My Family Game</h2>
+    <p id="loading-text" class="loading-text">Loading... 0%</p>
+    <div class="loading-bar">
+      <div class="loading-progress" id="loading-progress"></div>
+    </div>
+    <div class="loading-bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+  <!-- Music Control Button -->
+  <button id="music-control" class="music-control-btn" onclick="toggleMusic()" title="Toggle Music">
+    🔊
+  </button>
+  
+  <div class="cover-buttons-container">
+    
+    <div class="cover-play-button-wrapper">
+      <button class="cover-play-button" onclick="startGame()" aria-label="Start the game">
+        <span class="play-icon" aria-hidden="true">▶</span>
+      </button>
+      <span class="button-label">Play Game</span>
+    </div>
+    
+    <div class="cover-help-button-wrapper">
+      <button class="cover-help-button" onclick="showInstructions()" aria-label="How to play">
+        <span aria-hidden="true">?</span>
+      </button>
+      <span class="button-label">How to Play</span>
+    </div>
+  </div>
+</div>
+
+  <!-- Instructions Modal -->
+  <div id="instructions-modal" class="instructions-modal">
+    <div class="instructions-content">
+      <button class="close-modal" id="close-instructions" onclick="closeInstructions()">x</button>
+      <h2 class="instructions-title"> How to Play</h2>
+      <ul class="instructions-list">
+        <li><strong>Press the green play button</strong> to start the game!</li>
+        <li><strong>Phase 1: Family Tree</strong> - Listen to the sentence and click on the correct family member.</li>
+        <li><strong>Phase 2: Match Words</strong> - Look at the picture and choose the correct word.</li>
+        <li><strong>Phase 3: Complete the Story</strong> - Drag items to complete the family day story.</li>
+        <li><strong>Use the hint button</strong> (💡) if you need help.</li>
+      </ul>
+ <button class="instructions-replay-btn" onclick="replayInstructions()">
+      🔊 Replay Instructions
+    </button>
+      </div>
+  </div>
+
+  <!-- ===== GAME CONTAINER ===== -->
+  <div id="game-container" class="game-container">
+    <div class="game-area">
+      <!-- <div class="game-header">
+        <button class="back-btn" onclick="backToActivities()" aria-label="Back to cover">
+          <span>← Exit</span>
+        </button>
+        <div id="instruction-text" class="instruction-text">Click Start to begin!</div>
+        <div class="audio-controls">
+          <button id="play-sound-btn" class="audio-btn" onclick="playCurrentAudio()" title="Play audio" aria-label="Play audio"><span aria-hidden="true">🔊</span></button>
+          <button id="stop-sound-btn" class="audio-btn" onclick="stopAudio()" title="Stop audio" aria-label="Stop audio"><span aria-hidden="true">⏹️</span></button>
+          <button id="hint-btn" class="audio-btn" onclick="playHint()" title="Get hint" aria-label="Get hint"><span aria-hidden="true">💡</span></button>
+        </div>
+      </div> -->
+   <div class="topbar">
+      <button class="back-button" onclick="backToActivities()">← Back</button>
+      <div id="instruction-text" class="instruction-text">Click Start to begin!</div>
+      <div class="controls">
+        <button class="control-button" onclick="playHint()" title="Hint">💡</button>
+        <button class="control-button" onclick="playCurrentAudio()" title="Play Question">🔊</button>
+        <button class="control-button" onclick="stopAudio()" title="Stop Sound">⏹️</button>
+      </div>
+    </div>
+      <div class="main-game-area">
+        <!-- ===== FAMILY TREE (PHASE 1) ===== -->
+        <div id="phase1" class="phase1-container">
+          <div class="left-side">
+            <div class="family-tree-container">
+              <div class="family-tree">
+                <div class="tree-member" data-member="grandfather">
+                  <div class="member-image"><span class="emoji">👴</span><span class="label">Grandfather</span></div>
+                </div>
+                <div class="tree-member" data-member="grandmother">
+                  <div class="member-image"><span class="emoji">👵</span><span class="label">Grandmother</span></div>
+                </div>
+                <div class="tree-member" data-member="father">
+                  <div class="member-image"><span class="emoji">👨</span><span class="label">Father</span></div>
+                </div>
+                <div class="tree-member" data-member="mother">
+                  <div class="member-image"><span class="emoji">👩</span><span class="label">Mother</span></div>
+                </div>
+                <div class="tree-member" data-member="sister">
+                  <div class="member-image"><span class="emoji">👧</span><span class="label">Sister</span></div>
+                </div>
+                <div class="tree-member" data-member="brother">
+                  <div class="member-image"><span class="emoji">👦</span><span class="label">Brother</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="text-display" id="text-display">Click Start to begin building your family tree!</div>
+          </div>
+          <div class="right-side" id="image-options"></div>
+        </div>
+
+        <!-- ===== FAMILY TREE (PHASE 2) - MCQ ===== -->
+        <div id="phase2" class="phase2-container">
+          <div class="large-image-container" id="large-image"></div>
+          <div class="mcq-question-area" id="mcq-question">Which word matches this picture?</div>
+          <div class="word-options" id="word-options"></div>
+        </div>
+
+        <!-- ===== STORY MODE ===== -->
+        <div id="story-section" class="story-section">
+          <div class="story-left">
+            <div class="story-book-container">
+              <div class="story-book" id="story-book">
+                <div class="story-item" data-scene="breakfast" data-position="1"></div>
+                <div class="story-item" data-scene="breakfast" data-position="2"></div>
+                <div class="story-item" data-scene="playing" data-position="1"></div>
+                <div class="story-item" data-scene="playing" data-position="2"></div>
+                <div class="story-item" data-scene="dinner" data-position="1"></div>
+                <div class="story-item" data-scene="dinner" data-position="2"></div>
+                <div class="story-item" data-scene="bedtime" data-position="1"></div>
+                <div class="story-item" data-scene="bedtime" data-position="2"></div>
+              </div>
+            </div>
+            <div class="text-display" id="story-text-display">Complete the family day story by adding the missing items!</div>
+          </div>
+          <div class="story-right" id="story-options"></div>
+        </div>
+
+        <!-- Section Complete (kept, but not used to gate) -->
+     <!-- ===== LEVEL UP / CONGRATULATIONS OVERLAY ===== -->
+      <div id="level-up-overlay" class="level-up-overlay">
+        <div class="level-up-content">
+          <img src="../../../../images/level-up-congrats-blue-v2.webp" alt="Level Up" class="level-up-img" />
+          <button class="next-round-btn" onclick="backToMenu()">Back to Menu</button>
+        </div>
+      </div>
+
+        <!-- Explanation Modal -->
+<div id="explanation-modal" class="explanation-modal">
+  <div class="explanation-content">
+  <div class="explanation-avatar">
+        <picture>
+          <source type="image/webp" srcset="../../../../images/learning_buddy.webp">
+          <img class="buddy-avatar" src="../../../../images/learning_buddy.webp" alt="Learning Buddy smiling" loading="lazy" decoding="async" width="120" height="120" />
+        </picture>
+      </div>
+    <h2 id="explanation-title" class="explanation-title"></h2>
+    <p id="explanation-text" class="explanation-text"></p>
+    <div class="explanation-buttons">
+                <button id="continue-button" onclick="continueFromExplanation()" class="continue-button">Next Level ➡️</button>
+
+          </div> 
+    </div>
+</div>
+
+ <!-- <div id="explanation-overlay" class="explanation-overlay" aria-modal="true" role="dialog" aria-label="Feedback">
+    <div class="explanation-content">
+      <div class="explanation-avatar">
+        <picture>
+          <source type="image/webp" srcset="../../../../images/learning_buddy.webp">
+          <img class="buddy-avatar" src="../../../../images/learning_buddy.webp" alt="Learning Buddy smiling" loading="lazy" decoding="async" width="120" height="120" />
+        </picture>
+      </div>
+      <div class="explanation-title" id="explanation-title">Well done!</div>
+      <div id="explanation-text" class="explanation-text"></div>
+      <div class="explanation-buttons">
+        <button class="explanation-btn replay-btn" onclick="replayQuestion()" aria-label="Replay question">Replay</button>
+        <button class="explanation-btn continue-btn" onclick="continueFromExplanation()" aria-label="Continue to next question">Continue</button>
+      </div>
+    </div>
+  </div> -->
+
+      </div>
+    </div>
+  </div>
+
+      <script src="../../.././../js/ELA/K1/Unit2/ELA-K1-Unit2.js"></script>
+
+</body>
+</html>
