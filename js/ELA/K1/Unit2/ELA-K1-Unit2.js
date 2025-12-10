@@ -363,10 +363,6 @@ function showInstructions() {
   document.getElementById("instructions-modal").classList.add("active");
   replayInstructions();
 }
-/* ======== Instructions Modal ======== */
-// function showInstructions() {
-//   document.getElementById('instructions-modal').classList.add('active');
-// }
 
 function closeInstructions() {
   document.getElementById('instructions-modal').classList.remove('active');
@@ -806,12 +802,10 @@ function completeScenario() {
 
   const round = gameRounds[currentRound];
   if (currentScenario >= round.scenarios.length) {
-    // THIS IS THE LAST QUESTION (grandfather) → go straight to level-up
-    showGameComplete();          // ← this now shows the full level-up overlay
+    showGameComplete(); 
     return;
   }
 
-  // otherwise continue to next family member
   loadScenario();
 }
 function showSectionComplete(message) {
@@ -919,28 +913,6 @@ function buildStoryFeedback(isCorrect, scenario, pickedKey) {
     return `Not quite. Think again about what fits best here.`;
   }
 }
-
-/* ======== End Game ======== */
-// function showGameComplete() {
-//   // Hide all game sections
-//   document.getElementById('phase1').classList.add('hidden');
-//   document.getElementById('phase2').classList.remove('active');
-//   document.getElementById('story-section').classList.remove('active');
-//   document.getElementById('story-section').style.display = 'none';
-  
-//   // Show level-up overlay
-//   const completeText = "Family Tree Complete!";
-//   currentAudioText = completeText;
-//   speakText(completeText);
-  
-//   // Launch fireworks
-//   setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 2), 200);
-//   setTimeout(() => launchFireworks(window.innerWidth / 3, window.innerHeight / 2), 500);
-//   setTimeout(() => launchFireworks(window.innerWidth * 0.7, window.innerHeight / 2), 800);
-  
-//   // Show the level-up overlay
-//   showLevelUpOverlay();
-// }
 
 function launchFireworks(x, y) {
   for (let i = 0; i < 15; i++) {
@@ -1092,46 +1064,6 @@ function showLevelUpOverlay() {
   const prev = parseInt(localStorage.getItem('familyTreeLevel') || '0', 10);
   localStorage.setItem('familyTreeLevel', String(prev + 1));
 }
-// function restartGame() {
-//   // Stop all sounds
-//   stopAudio();
-//   stopApplause();
-//   const bgMusic = document.getElementById('background-music');
-//   if (bgMusic) {
-//     bgMusic.pause();
-//     bgMusic.currentTime = 0;
-//   }
-
-//   // Remove the level-up overlay completely
-//   const overlay = document.getElementById('levelup-overlay');
-//   if (overlay) overlay.remove();
-
-//   // Show topbar again
-//   const topbar = document.querySelector('.topbar');
-//   if (topbar) topbar.style.display = 'flex';
-
-//   // Reset all game state
-//   currentRound = 0;
-//   currentScenario = 0;
-//   currentPhase = 2;
-//   revealedMembers.clear();
-
-//   // Reset family tree visuals
-//   resetFamilyTree();
-
-//   // === THIS IS THE KEY PART (same as Five Senses game) ===
-//   const coverScreen = document.getElementById('cover-screen');
-//   const gameContainer = document.getElementById('game-container');
-
-//   coverScreen.style.display = 'flex';
-//   coverScreen.classList.remove('hidden');
-//   gameContainer.classList.remove('active');
-
-//   // Restart background music after a tiny delay
-//   setTimeout(() => {
-//     if (bgMusic) bgMusic.play().catch(() => {});
-//   }, 600);
-// }
 function setEndStateUI(on) {
   const topbar = document.querySelector('.topbar');
   if (!topbar) return;
