@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 :root {
   --primary-color: #2563eb;
   --primary-light: #4f86ff;
@@ -1275,6 +1276,8 @@ body {
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
   animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 /* Enhanced Phonics Island Adventure CSS */
 
 /* Reset and Base Styles */
@@ -1402,11 +1405,15 @@ body {
 .screen {
   display: none;
   flex: 1;
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   position: relative;
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .level-up-content::before {
   content: '';
@@ -2259,6 +2266,8 @@ body {
   /* ⭐ ADD TRANSITIONS FOR SMOOTH HIDE */
   transition: opacity 0.5s ease, visibility 0.5s ease;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 .screen.active {
   display: flex;
   flex-direction: column;
@@ -2677,11 +2686,15 @@ body {
 }
 
 .tooltip.visible {
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   opacity: 1;
   visibility: visible;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* ⭐ CRITICAL: Add the .hidden class */
 .loading-screen.hidden {
@@ -2820,6 +2833,8 @@ body {
   }
 
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 .tooltip-content {
   background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 100%);
   color: #fff;
@@ -3273,12 +3288,16 @@ body {
   0%, 100% {
     transform: translateY(0px);
   }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   50% {
     transform: translateY(-10px);
   }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 @keyframes fadeIn {
   from {
@@ -3287,6 +3306,8 @@ body {
 
   to {
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 @keyframes compassSpin {
   0% {
     transform: rotate(0deg);
@@ -3342,11 +3363,15 @@ body {
   }
   100% {
     transform: scale(1);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
     opacity: 1;
   }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* --- Fireworks particles (used by the new showFireworks JS) --- */
 .fireworks-canvas {
@@ -3363,6 +3388,8 @@ body {
   will-change: transform, opacity;
 }
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 @keyframes starTwinkle {
   0% {
     transform: scale(1);
@@ -4193,4 +4220,7 @@ body {
 @media (max-width:720px){
   .shopping-cart-game{ grid-template-columns:1fr; }
 }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd

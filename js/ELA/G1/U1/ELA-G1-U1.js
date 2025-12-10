@@ -40,6 +40,7 @@ const loadingManager = {
   },
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   complete: function() {
     setTimeout(() => {
       this.loadingScreen.style.opacity = '0';
@@ -50,6 +51,8 @@ const loadingManager = {
     }, 500);
   }
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
  complete: function() {
   setTimeout(() => {
     this.loadingScreen.style.opacity = '0';
@@ -65,6 +68,9 @@ const loadingManager = {
   }, 500);
 }
 
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 };
 
@@ -150,6 +156,10 @@ window.addEventListener('load', () => {
     musicToggle.textContent = '🔊';
     fadeMusic(0.3, 2000);   // fade in over 2 seconds
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    audioManager.loadSound('welcome', '../../../../audio/G1U1Welcome.mp3');
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
     audioManager.loadSound('welcome', '../../../../audio/G1U1Welcome.mp3');
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -189,7 +199,11 @@ const gameData = {
     { id: 'child', name: 'Child', image: '../../../../images/happy_girl.png', audio: '../../../../audio/child.mp3' },
     { id: 'fox', name: 'Fox', image: '../../../../images/fox.png', audio: '../../../../audio/fox.mp3' },
 <<<<<<< HEAD
+<<<<<<< HEAD
     { id: 'cat', name: 'Cat', image: '../../../../images/cute_cat.png', audio: '../../../../audio/cat.mp3' },
+=======
+    { id: 'cat', name: 'Cat', image: '../../../../images/cute_cat.png', audio: '../../../../audio/catK2U1.mp3' },
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
     { id: 'cat', name: 'Cat', image: '../../../../images/cute_cat.png', audio: '../../../../audio/catK2U1.mp3' },
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -387,13 +401,19 @@ function startGame() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 function replayInstructions() {
   // Always play the How-To audio, not the welcome
   stopSpeech();
    audioManager.play('howtoplay');
 }
 
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 
 // Initialize Fabric.js Canvas

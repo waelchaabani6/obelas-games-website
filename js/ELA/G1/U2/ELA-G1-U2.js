@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Game Questions
 const gameQuestions = [
   // Forest Scene
@@ -36,6 +37,8 @@ const targetSprites = {
 // Game State
 // Game State
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 // Controls how fast fade happens (smaller = slower)
 const fadeStep = 0.05;
 
@@ -504,6 +507,9 @@ const targetSprites = {
 /*************************************************
  🎮 GAME ENGINE VARIABLES
 **************************************************/
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 let currentQuestionIndex = 0;
 let isPlaying = false;
@@ -513,6 +519,7 @@ let backgroundImage = null;
 let targetImage = null;
 let animationId = null;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Canvas
 const canvas = document.getElementById('game-canvas');
@@ -849,6 +856,8 @@ function readText(text) {
   speechSynthesis.speak(utterance);
 }
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -1245,4 +1254,7 @@ function createParticles(x, y, color) {
     }
 }
 
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd

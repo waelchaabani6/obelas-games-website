@@ -5,12 +5,17 @@
   --primary-light: #4f86ff;
   --primary-dark: #1e40af;
 <<<<<<< HEAD
+<<<<<<< HEAD
     --green-dark: #4CAF50;
 
   --text-light: #fff;
   --text-dark: #2c3e50;
   --green-color: #4CAF50;
 
+=======
+  --text-light: #fff;
+  --text-dark: #2c3e50;
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   --text-light: #fff;
   --text-dark: #2c3e50;
@@ -57,7 +62,11 @@ body {
   align-items: center;
   justify-content: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-image: url('../../../../images/K1/U1/fivesensesgamecover_new.webp');
+=======
+  background-image: url('../../../../images/fivesensesgamecover_new.webp');
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   background-image: url('../../../../images/fivesensesgamecover_new.webp');
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -113,7 +122,11 @@ body {
 .cover-buttons-container {
   position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
   right: clamp(20px, 5vw, 60px); /* use 'right' instead of 'left' */
+=======
+  right: clamp(40px, 6vw, 80px);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   right: clamp(40px, 6vw, 80px);
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -150,7 +163,10 @@ body {
     transform: translateX(50px);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   to {
@@ -162,8 +178,13 @@ body {
 /* Play Button - NO TRANSFORM ON HOVER */
 .cover-play-button {
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: clamp(80px, 10vw, 80px);
   height: clamp(80px, 10vw, 80px);
+=======
+ width: clamp(80px, 10vw, 80px);
+    height: clamp(80px, 10vw, 80px);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
  width: clamp(80px, 10vw, 80px);
     height: clamp(80px, 10vw, 80px);
@@ -175,8 +196,13 @@ body {
   font-size: clamp(2.8rem, 7vw, 4.5rem);
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5),
     0 0 0 0 rgba(76, 175, 80, 0.4);
+=======
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 
+              0 0 0 0 rgba(76, 175, 80, 0.4);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 
               0 0 0 0 rgba(76, 175, 80, 0.4);
@@ -187,6 +213,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
   /* animation: pulse 2s ease-in-out infinite; */
 }
@@ -203,6 +230,8 @@ body {
     box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5),
       0 0 0 20px rgba(76, 175, 80, 0);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -214,6 +243,9 @@ body {
   50% {
     box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 
                 0 0 0 20px rgba(76, 175, 80, 0);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   }
 }
@@ -232,8 +264,13 @@ body {
 
 .cover-play-button:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 0 15px 45px rgba(76, 175, 80, 0.7),
     0 0 0 0 rgba(76, 175, 80, 0);
+=======
+  box-shadow: 0 15px 45px rgba(76, 175, 80, 0.7), 
+              0 0 0 0 rgba(76, 175, 80, 0);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   box-shadow: 0 15px 45px rgba(76, 175, 80, 0.7), 
               0 0 0 0 rgba(76, 175, 80, 0);
@@ -261,8 +298,13 @@ body {
 /* How to Play Button */
 .cover-help-button {
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: clamp(80px, 10vw, 80px);
   height: clamp(80px, 10vw, 80px);
+=======
+ width: clamp(80px, 10vw, 80px);
+    height: clamp(80px, 10vw, 80px);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
  width: clamp(80px, 10vw, 80px);
     height: clamp(80px, 10vw, 80px);
@@ -317,7 +359,11 @@ body {
   padding: clamp(8px, 1.5vh, 12px) clamp(16px, 3vw, 24px);
   border-radius: 25px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: clamp(0.5rem, 2vw, 0.8rem);
+=======
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
     font-size: clamp(0.5rem, 2vw, 0.8rem);
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -328,6 +374,7 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* Modal */
 .modal {
@@ -383,6 +430,9 @@ body {
 =======
 /* ===== INSTRUCTIONS MODAL ===== */
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
+/* ===== INSTRUCTIONS MODAL ===== */
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 .instructions-modal {
   position: fixed;
   top: 0;
@@ -398,6 +448,7 @@ body {
   backdrop-filter: blur(5px);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .instructions-modal.active {
   display: flex;
 animation: fadeIn 0.3s ease;
@@ -412,6 +463,8 @@ animation: fadeIn 0.3s ease;
   padding: clamp(20px, 5vw, 35px);
   max-width: 550px;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 
 .instructions-modal.active {
   display: flex;
@@ -432,6 +485,9 @@ animation: fadeIn 0.3s ease;
   border-radius: clamp(25px, 5vw, 35px);
   padding: clamp(30px, 6vw, 50px);
   max-width: 650px;
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   width: 95%;
   max-height: 85vh;
@@ -442,6 +498,10 @@ animation: fadeIn 0.3s ease;
   border: 3px solid rgba(37, 99, 235, 0.2);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -456,16 +516,22 @@ animation: fadeIn 0.3s ease;
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .instructions-title {
   font-size: clamp(1.5rem, 5vw, 2rem);
   color: #2563eb;
   margin-bottom: clamp(15px, 3vh, 20px);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 
 .instructions-title {
   font-size: clamp(2rem, 6vw, 2.8rem);
   color: #2563eb;
   margin-bottom: clamp(20px, 4vh, 30px);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   text-align: center;
   font-weight: 700;
@@ -476,6 +542,7 @@ animation: fadeIn 0.3s ease;
   list-style: none;
   padding: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 0 0 clamp(15px, 3vh, 25px) 0;
 }
 .instructions-list li {
@@ -484,6 +551,8 @@ animation: fadeIn 0.3s ease;
   margin-bottom: clamp(10px, 2vh, 15px);
   padding-left: clamp(35px, 6vw, 45px);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   margin: 0 0 clamp(25px, 5vh, 35px) 0;
 }
 
@@ -492,6 +561,9 @@ animation: fadeIn 0.3s ease;
   color: #2c3e50;
   margin-bottom: clamp(15px, 3vh, 22px);
   padding-left: clamp(45px, 8vw, 55px);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   position: relative;
   line-height: 1.6;
@@ -503,8 +575,13 @@ animation: fadeIn 0.3s ease;
   left: 0;
   top: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: clamp(25px, 5vw, 32px);
   height: clamp(25px, 5vw, 32px);
+=======
+  width: clamp(32px, 6vw, 40px);
+  height: clamp(32px, 6vw, 40px);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   width: clamp(32px, 6vw, 40px);
   height: clamp(32px, 6vw, 40px);
@@ -517,6 +594,7 @@ animation: fadeIn 0.3s ease;
   justify-content: center;
   font-weight: bold;
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
@@ -525,6 +603,8 @@ animation: fadeIn 0.3s ease;
   width: 100%;
   padding: clamp(10px, 2vh, 14px);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
@@ -557,13 +637,20 @@ animation: fadeIn 0.3s ease;
 .instructions-replay-btn {
   width: 100%;
   padding: clamp(12px, 2.5vh, 16px);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   background: linear-gradient(135deg, #2563eb, #1e40af);
   color: #fff;
   border: none;
   border-radius: 50px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: clamp(0.85rem, 2vw, 1rem);
+=======
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   font-size: clamp(0.95rem, 2.5vw, 1.15rem);
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -573,7 +660,13 @@ animation: fadeIn 0.3s ease;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+  margin-top: 10px;
+}
+
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   margin-top: 10px;
 }
@@ -584,6 +677,7 @@ animation: fadeIn 0.3s ease;
   box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5);
   background: linear-gradient(135deg, #1e40af, #1e3a8a);
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .instructions-replay-btn:active {
   transform: translateY(-1px);
@@ -606,10 +700,15 @@ animation: fadeIn 0.3s ease;
   background: #d32f2f;
 }
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 
 .instructions-replay-btn:active {
   transform: translateY(-1px);
 }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 
 /* ===== GAME CONTAINER ===== */
@@ -622,8 +721,11 @@ animation: fadeIn 0.3s ease;
   transition: opacity 0.5s ease;
   pointer-events: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 0.5rem;
   min-height: 100vh;
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
@@ -642,6 +744,7 @@ animation: fadeIn 0.3s ease;
   gap: clamp(10px, 2vh, 15px);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* Top Bar */
 .topbar {
@@ -682,6 +785,8 @@ animation: fadeIn 0.3s ease;
     font-size: 1.5rem;
     font-weight: bold;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 /* Topbar */
 .topbar {
   display: flex;
@@ -723,6 +828,9 @@ animation: fadeIn 0.3s ease;
   font-weight: 700;
   flex: 1;
   min-width: 200px;
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
 
@@ -730,6 +838,7 @@ animation: fadeIn 0.3s ease;
 .hint-btn,
 .speak-btn,
 .stop-btn {
+<<<<<<< HEAD
 <<<<<<< HEAD
   background: white;
     border: 2px solid #001f3f;
@@ -757,6 +866,8 @@ animation: fadeIn 0.3s ease;
 
 /* .speak-btn {
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   border: none;
   width: clamp(48px, 8vw, 60px);
   height: clamp(48px, 8vw, 60px);
@@ -781,6 +892,9 @@ animation: fadeIn 0.3s ease;
 }
 
 .speak-btn {
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   background: linear-gradient(135deg, #16a34a, #15803d);
   margin-left: 6px;
@@ -790,9 +904,15 @@ animation: fadeIn 0.3s ease;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(22, 163, 74, 0.4);
 <<<<<<< HEAD
+<<<<<<< HEAD
 } */
 
 /* .stop-btn {
+=======
+}
+
+.stop-btn {
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 }
 
@@ -805,6 +925,7 @@ animation: fadeIn 0.3s ease;
 .stop-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(239, 68, 68, 0.4);
+<<<<<<< HEAD
 <<<<<<< HEAD
 } */
 
@@ -958,6 +1079,8 @@ animation: fadeIn 0.3s ease;
   transition: opacity 0.8s ease;
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
 
 /* Game Area */
@@ -1022,6 +1145,7 @@ animation: fadeIn 0.3s ease;
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /* Explanation Modal */
@@ -1111,6 +1235,8 @@ animation: fadeIn 0.3s ease;
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(76, 175, 80, 0.5);
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 /* Explanation Overlay */
 .explanation-overlay {
   position: fixed;
@@ -1215,6 +1341,9 @@ animation: fadeIn 0.3s ease;
 
 .explanation-btn:active {
   transform: translateY(-1px);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
 
@@ -1244,22 +1373,29 @@ animation: fadeIn 0.3s ease;
 /* Tablet and below */
 @media (max-width: 768px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* .cover-buttons-container {
     right: clamp(25px, 5vw, 40px);
     gap: clamp(20px, 3vh, 30px);
   } */
 
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   .cover-buttons-container {
     right: clamp(25px, 5vw, 40px);
     gap: clamp(20px, 3vh, 30px);
   }
   
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   .topbar {
     flex-direction: column;
     align-items: stretch;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   .topbar>div:last-child {
@@ -1270,6 +1406,8 @@ animation: fadeIn 0.3s ease;
   .question-text {
         font-size: 1.2rem;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   
   .topbar > div:last-child {
     justify-content: center;
@@ -1278,6 +1416,9 @@ animation: fadeIn 0.3s ease;
   
   .question-text {
     font-size: clamp(1.1rem, 4vw, 1.6rem);
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   }
 }
@@ -1289,7 +1430,11 @@ animation: fadeIn 0.3s ease;
     gap: 20px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1299,7 +1444,11 @@ animation: fadeIn 0.3s ease;
     font-size: 2.5rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1309,7 +1458,11 @@ animation: fadeIn 0.3s ease;
     font-size: 2rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1318,17 +1471,23 @@ animation: fadeIn 0.3s ease;
     padding: 6px 12px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   .question-area {
     padding: 12px;
   }
 
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   
   .question-area {
     padding: 12px;
   }
   
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   .hint-btn,
   .speak-btn,
@@ -1338,7 +1497,11 @@ animation: fadeIn 0.3s ease;
     font-size: 1.1rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1347,7 +1510,11 @@ animation: fadeIn 0.3s ease;
     width: 100%;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1359,7 +1526,10 @@ animation: fadeIn 0.3s ease;
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   .cover-play-button,
@@ -1373,7 +1543,11 @@ animation: fadeIn 0.3s ease;
     min-width: 44px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1385,7 +1559,10 @@ animation: fadeIn 0.3s ease;
 /* High contrast mode */
 @media (prefers-contrast: high) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   .topbar,
@@ -1393,7 +1570,11 @@ animation: fadeIn 0.3s ease;
     border-width: 3px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1406,7 +1587,10 @@ animation: fadeIn 0.3s ease;
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   *,
@@ -1417,6 +1601,7 @@ animation: fadeIn 0.3s ease;
     transition-duration: 0.01ms !important;
   }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 @media (width: 900px) and (height: 1440px) {
@@ -1453,11 +1638,16 @@ animation: fadeIn 0.3s ease;
 /* --- Level Up end screen --- */
 .levelup-wrap { text-align: center; padding: 12px 8px; }
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
+/* --- Level Up end screen --- */
+.levelup-wrap { text-align: center; padding: 12px 8px; }
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 .levelup-image {
   width: min(520px, 80vw);
   height: auto;
   display: block;
   margin: 8px auto 12px;
+<<<<<<< HEAD
 <<<<<<< HEAD
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .25));
 }
@@ -1514,6 +1704,8 @@ animation: fadeIn 0.3s ease;
 }
 
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.25));
 }
 .levelup-title { font-size: clamp(1.6rem, 5vw, 2.4rem); color: #1e40af; margin: 6px 0; font-weight: 800; }
@@ -1532,6 +1724,9 @@ animation: fadeIn 0.3s ease;
 }
 .levelup-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(76,175,80,0.5); }
 .levelup-btn.back-map { background: linear-gradient(135deg, #699bf7, #5a8de8); }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 /* Hide controls after level up (end screen) */
 .topbar.end-state .back-btn,
@@ -1540,6 +1735,7 @@ animation: fadeIn 0.3s ease;
 .topbar.end-state #stop-sound-btn {
   display: none !important;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 .music-control-btn {
@@ -1567,6 +1763,8 @@ animation: fadeIn 0.3s ease;
 }
 
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
  .music-control-btn {
       position: fixed;
       bottom: 20px;
@@ -1595,6 +1793,9 @@ animation: fadeIn 0.3s ease;
     .music-control-btn:active {
       transform: scale(0.95);
     }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 /* Full-page Level Up Overlay */
 .levelup-fullpage-overlay {
@@ -1624,12 +1825,15 @@ animation: fadeIn 0.3s ease;
 
 .levelup-buttons-top {
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-top: 20px;         /* spacing under the image */
   display: flex;
   gap: clamp(15px, 3vw, 25px);
   justify-content: center;
   flex-wrap: wrap;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   position: absolute;
   top: clamp(20px, 5vh, 60px);
   left: 50%;
@@ -1639,6 +1843,9 @@ animation: fadeIn 0.3s ease;
   z-index: 10;
   flex-wrap: wrap;
   justify-content: center;
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
 
@@ -1696,7 +1903,10 @@ animation: fadeIn 0.3s ease;
     transform: scale(0.8);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   to {
@@ -1710,7 +1920,10 @@ animation: fadeIn 0.3s ease;
     opacity: 0;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   to {
@@ -1725,7 +1938,11 @@ animation: fadeIn 0.3s ease;
     gap: 10px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 =======
   
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
@@ -1733,6 +1950,7 @@ animation: fadeIn 0.3s ease;
     padding: 10px 16px;
     font-size: 0.9rem;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   .levelup-fullpage-image {
@@ -1753,9 +1971,14 @@ animation: fadeIn 0.3s ease;
   position: absolute;
   will-change: transform, opacity;
 =======
+=======
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
   
   .levelup-fullpage-image {
     max-height: 60vh;
   }
+<<<<<<< HEAD
+>>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
+=======
 >>>>>>> 083307f40b179015ed9d3664af188e3328b335dd
 }
