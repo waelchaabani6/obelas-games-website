@@ -864,7 +864,7 @@ body {
 .loading-screen {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  background: linear-gradient(135deg, #bae6fd, #e0f2fe, #a5d8ff);
   display: flex;
   align-items: center;
   justify-content: center;
