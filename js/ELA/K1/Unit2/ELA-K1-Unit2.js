@@ -21,12 +21,12 @@ const STORY_FEEDBACK = {
 
 /** ====== Assets ====== */
 const imagePaths = [
-  '../../../../images/father_256_clean.webp',
-  '../../../../images/mother_256.webp',
-  '../../../../images/grandfather_256.webp',
-  '../../../../images/grandmother_256.webp',
-  '../../../../images/sister_256.webp',
-  '../../../../images/brother_256.webp',
+  '../../../../images/K1/U2/father_256_clean.webp',
+  '../../../../images/K1/U2/mother_256.webp',
+  '../../../../images/K1/U2/grandfather_256.webp',
+  '../../../../images/K1/U2/grandmother_256.webp',
+  '../../../../images/K1/U2/sister_256.webp',
+  '../../../../images/K1/U2/brother_256.webp',
   '../../../../images/family_breakfast_cereal.webp',
   '../../../../images/milk.webp',
   '../../../../images/ball.webp',
@@ -36,21 +36,21 @@ const imagePaths = [
   '../../../../images/blanket.webp',
   '../../../../images/learning_buddy.webp',
   '../../../../images/level-up-congrats-blue-v2.webp',
-  '../../../../images/FamilyPuzzleGame_50kb_final.webp'
+  '../../../../images/K1/U2/FamilyPuzzleGame_50kb_final.webp'
 ];
 
 const audioPaths = [
   '../../../../audio/kids-game-gaming-background-music-295075.mp3',
   '../../../../audio/applause.mp3',
-  "../../../../audio/K1U1covergame.mp3",
-  "../../../../audio/K1U1HowToPlay.mp3",
-  "../../../../audio/K1-U2-1.mp3",
-  "../../../../audio/mother.mp3",
-  "../../../../audio/father.mp3",
-  "../../../../audio/brother.mp3",
-  "../../../../audio/sister.mp3",
-  "../../../../audio/grandmother.mp3",
-  "../../../../audio/grandfather.mp3",
+  "../../../../audio/K1/U2/K1U2covergame.mp3",
+  "../../../../audio/K1/U2/K1U2HowToPlay.mp3",
+  "../../../../audio/K1/U2/K1-U2-1.mp3",
+  "../../../../audio/K1/U2/mother.mp3",
+  "../../../../audio/K1/U2/father.mp3",
+  "../../../../audio/K1/U2/brother.mp3",
+  "../../../../audio/K1/U2/sister.mp3",
+  "../../../../audio/K1/U2/grandmother.mp3",
+  "../../../../audio/K1/U2/grandfather.mp3",
 ];
 
 const LEVEL_STORAGE_KEY = 'familyTreeLevel';
@@ -110,6 +110,7 @@ function preloadAssets() {
     setTimeout(() => {
       loadingScreen.classList.add('hidden');
       coverScreen.classList.remove('hidden');
+        speakText("welcome-message");
     }, 400);
   });
 }
@@ -121,18 +122,18 @@ let currentAudio = null;
 let audioSequenceStopped = false;
 
 const audioMap = {
-  "welcome-message": "../../../../audio/K1U1covergame.mp3",
-  "How to Play": "../../../../audio/K1U2HowToPlay.mp3",
-  "Choose the word that matches with the picture.": "../../../../audio/K1-U2-1.mp3",
-  "Which word matches this picture?": "../../../../audio/K1-U1-2.mp3",
+  "welcome-message": "../../../../audio/K1/U2/K1U2covergame.mp3",
+  "How to Play": "../../../../audio/K1/U2/K1U2HowToPlay.mp3",
+  "Choose the word that matches with the picture.": "../../../../audio/K1/U2/K1-U2-1.mp3",
+  "Which word matches this picture?": "../../../../audio/K1/U2/K1-U1-2.mp3",
   "Correct!": "../../../../audio/K1U1Correct.mp3",
   "Try again.": "../../../../audio/K1U1TryAgain.mp3",
-  "mother": "../../../../audio/mother.mp3",
-  "father": "../../../../audio/father.mp3",
-  "brother": "../../../../audio/brother.mp3",
-  "sister": "../../../../audio/sister.mp3",
-  "grandmother": "../../../../audio/grandmother.mp3",
-  "grandfather": "../../../../audio/grandfather.mp3",
+  "mother": "../../../../audio/K1/U2/mother.mp3",
+  "father": "../../../../audio/K1/U2/father.mp3",
+  "brother": "../../../../audio/K1/U2/brother.mp3",
+  "sister": "../../../../audio/K1/U2/sister.mp3",
+  "grandmother": "../../../../audio/K1/U2/grandmother.mp3",
+  "grandfather": "../../../../audio/K1/U2/grandfather.mp3",
   "cereal": "../../../../audio/cereal.mp3",
   "milk": "../../../../audio/milk.mp3",
   "ball": "../../../../audio/ball.mp3",
@@ -140,25 +141,25 @@ const audioMap = {
   "food": "../../../../audio/food.mp3",
   "pillow": "../../../../audio/pillow.mp3",
   "blanket": "../../../../audio/blanket.mp3",
-  "Look for the boy in the family.": "../../../../audio/K1-U2-1-hint.mp3",
-  "Look for the woman who takes care of the family.": "../../../../audio/K1-U2-2-hint.mp3",
-  "Look for the man who is a parent.": "../../../../audio/K1-U2-3-hint.mp3",
-  "Look for the girl in the family.": "../../../../audio/K1-U2-4-hint.mp3",
-  "Look for the older woman in the family.": "../../../../audio/K1-U2-5-hint.mp3",
-  "Look for the older man in the family.": "../../../../audio/K1-U2-6-hint.mp3",
-  'Correct! We match the picture with the word "mother". A mother is a woman who cares for her family.': "../../../../audio/K1-U2-2-explanation.mp3",
-  'Correct! We match the picture with the word "father". A father is a man who cares for his family.': "../../../../audio/K1-U2-3-explanation.mp3",
-  'Correct! We match the picture with the word "sister". A sister is a girl in your family.': "../../../../audio/K1-U2-4-explanation.mp3",
-  'Correct! We match the picture with the word "grandmother". A grandmother is an older woman in your family.': "../../../../audio/K1-U2-5-explanation.mp3",
-  'Correct! We match the picture with the word "grandfather". A grandfather is an older man in your family.': "../../../../audio/K1-U2-6-explanation.mp3",
-  'Correct! We match the picture with the word "brother". A brother is a boy in your family.': "../../../../audio/K1-U2-1-Explanation.mp3",
-  'Try again. We are matching the picture with the word "brother". A brother is a boy in your family.': "../../../../audio/K1-U2-1-tryagainExplanation.mp3",
-  'Try again. We are matching the picture with the word "mother". A mother is a woman who cares for her family.': "../../../../audio/K1-U2-2-tryagainExplanation.mp3",
-  'Try again. We are matching the picture with the word "father". A father is a man who cares for his family.': "../../../../audio/K1-U2-3-tryagainExplanation.mp3",
-  'Try again. We are matching the picture with the word "grandmother". A grandmother is an older woman in your family.': "../../../../audio/K1-U2-4-tryagainExplanation.mp3",
-  'Try again. We are matching the picture with the word "sister". A sister is a girl in your family.': "../../../../audio/K1-U2-5-tryagainExplanation.mp3",
-  'Try again. We are matching the picture with the word "grandfather". A grandfather is an older man in your family.': "../../../../audio/K1-U2-6-tryagainExplanation.mp3",
-   "Family Tree Complete! 🎉": "../../../../audio/K1-U2-l1.mp3",
+  "Look for the boy in the family.": "../../../../audio/K1/U2/K1-U2-1-hint.mp3",
+  "Look for the woman who takes care of the family.": "../../../../audio/K1/U2/K1-U2-2-hint.mp3",
+  "Look for the man who is a parent.": "../../../../audio/K1/U2/K1-U2-3-hint.mp3",
+  "Look for the girl in the family.": "../../../../audio/K1/U2/K1-U2-4-hint.mp3",
+  "Look for the older woman in the family.": "../../../../audio/K1/U2/K1-U2-5-hint.mp3",
+  "Look for the older man in the family.": "../../../../audio/K1/U2/K1-U2-6-hint.mp3",
+  'Correct! We match the picture with the word "mother". A mother is a woman who cares for her family.': "../../../../audio/K1/U2/K1-U2-2-explanation.mp3",
+  'Correct! We match the picture with the word "father". A father is a man who cares for his family.': "../../../../audio/K1/U2/K1-U2-3-explanation.mp3",
+  'Correct! We match the picture with the word "sister". A sister is a girl in your family.': "../../../../audio/K1/U2/K1-U2-4-explanation.mp3",
+  'Correct! We match the picture with the word "grandmother". A grandmother is an older woman in your family.': "../../../../audio/K1/U2/K1-U2-5-explanation.mp3",
+  'Correct! We match the picture with the word "grandfather". A grandfather is an older man in your family.': "../../../../audio/K1/U2/K1-U2-6-explanation.mp3",
+  'Correct! We match the picture with the word "brother". A brother is a boy in your family.': "../../../../audio/K1/U2/K1-U2-1-Explanation.mp3",
+  'Try again. We are matching the picture with the word "brother". A brother is a boy in your family.': "../../../../audio/K1/U2/K1-U2-1-tryagainExplanation.mp3",
+  'Try again. We are matching the picture with the word "mother". A mother is a woman who cares for her family.': "../../../../audio/K1/U2/K1-U2-2-tryagainExplanation.mp3",
+  'Try again. We are matching the picture with the word "father". A father is a man who cares for his family.': "../../../../audio/K1/U2/K1-U2-3-tryagainExplanation.mp3",
+  'Try again. We are matching the picture with the word "grandmother". A grandmother is an older woman in your family.': "../../../../audio/K1/U2/K1-U2-4-tryagainExplanation.mp3",
+  'Try again. We are matching the picture with the word "sister". A sister is a girl in your family.': "../../../../audio/K1/U2/K1-U2-5-tryagainExplanation.mp3",
+  'Try again. We are matching the picture with the word "grandfather". A grandfather is an older man in your family.': "../../../../audio/K1/U2/K1-U2-6-tryagainExplanation.mp3",
+   "Family Tree Complete! 🎉": "../../../../audio/K1/U2/K1-U2-l1.mp3",
 };
 
 function speakText(key) {
@@ -349,7 +350,6 @@ function startBackgroundMusic() {
 function replayInstructions() {
   // Always play the How-To audio, not the welcome
   stopAudio();
-
   speakText("How to Play");
 
     
@@ -967,4 +967,22 @@ function showLevelUpOverlay() {
   speakText("Level up! Congratulations! You completed the Family Tree and Day with My Family!");
   setTimeout(() => launchFireworks(window.innerWidth / 2, window.innerHeight / 2), 300);
 }
-
+window.addEventListener('load', () => {
+    const audio = document.getElementById('background-music');
+    if (!audio) return;
+    audio.volume = 0.3; // gentle volume
+    const playPromise = audio.play();
+    // Handle autoplay restrictions gracefully
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // Autoplay blocked — wait for user interaction
+            const startAudio = () => {
+                audio.play().catch(() => {});
+                document.removeEventListener('click', startAudio);
+                document.removeEventListener('touchstart', startAudio);
+            };
+            document.addEventListener('click', startAudio);
+            document.addEventListener('touchstart', startAudio);
+        });
+    }
+});
