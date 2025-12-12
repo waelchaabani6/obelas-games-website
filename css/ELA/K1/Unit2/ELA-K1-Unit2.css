@@ -45,7 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../../../../images/K1/U2/FamilyPuzzleGame_50kb_final.webp');
+  background-image: url('../../../../images/K1/U2/FamilyPuzzleGame.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1050,6 +1050,70 @@ body {
   z-index: 100;
   border-radius: 30px;
 }
+/* --- Level Up end screen --- */
+.levelup-wrap {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.levelup-image {
+  width: min(520px, 80vw);
+  height: auto;
+  display: block;
+  margin: 8px auto 12px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .25));
+}
+
+.levelup-title {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: #1e40af;
+  margin: 6px 0;
+  font-weight: 800;
+}
+
+.levelup-sub {
+  font-size: clamp(1rem, 3.2vw, 1.2rem);
+  color: #2c3e50;
+  margin: 6px 0 15px;
+}
+
+.levelup-level {
+  font-size: clamp(1rem, 3.2vw, 1.2rem);
+  color: #15803d;
+  margin: 2px 0 14px;
+  font-weight: 700;
+}
+
+.levelup-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.levelup-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.levelup-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(76, 175, 80, 0.5);
+}
+
+.levelup-btn.back-map {
+  background: linear-gradient(135deg, #699bf7, #5a8de8);
+}
 
 .complete-message {
   font-size: 2.0rem;
@@ -1914,6 +1978,141 @@ body {
     right: clamp(10px, 2.5vw, 12px);
   }
 }
+/* Full-page Level Up Overlay */
+.levelup-fullpage-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease;
+}
+
+.levelup-fullpage-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.levelup-buttons-top {
+  margin-top: 20px;         /* spacing under the image */
+  display: flex;
+  gap: clamp(15px, 3vw, 25px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.levelup-btn-top {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: clamp(12px, 2vh, 16px) clamp(20px, 4vw, 32px);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.levelup-btn-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(76, 175, 80, 0.5);
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+}
+
+.levelup-btn-top:active {
+  transform: translateY(-1px);
+}
+
+.levelup-btn-top.back-map {
+  background: linear-gradient(135deg, #699bf7, #5a8de8);
+  box-shadow: 0 8px 24px rgba(105, 155, 247, 0.4);
+}
+
+.levelup-btn-top.back-map:hover {
+  background: linear-gradient(135deg, #5a8de8, #4a7dd9);
+  box-shadow: 0 12px 32px rgba(105, 155, 247, 0.5);
+}
+
+.levelup-fullpage-image {
+  max-width: 90vw;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.3));
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for level up screen */
+@media (max-width: 768px) {
+  .levelup-buttons-top {
+    top: 15px;
+    gap: 10px;
+  }
+
+  .levelup-btn-top {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .levelup-fullpage-image {
+    max-height: 60vh;
+  }
+  
+}
+/* --- Fireworks particles (used by the new showFireworks JS) --- */
+.fireworks-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5000;  /* highest layer */
+  overflow: visible;
+}
+
+.firework {
+  position: absolute;
+  will-change: transform, opacity;
+}
+ 
 
 /* Very small phones (max-width: 400px) */
 @media (max-width: 400px) {
