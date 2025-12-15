@@ -7,166 +7,45 @@ const imagePaths = [
   '../../../../images/learning_buddy.webp',
   '../../../../images/levelup.png',
 
-  // 🌟 Scene Images (1–15) — EXACT match with gameScenes[]
-  '../../../../images/scene1_sad_friend.jpg',
-  '../../../../images/scene2_kitchen.jpg',
-  '../../../../images/scene3_mad_feeling.jpg',
-  '../../../../images/scene4_offering_help.jpg',
-  '../../../../images/scene5_working_together.jpg',
-  '../../../../images/scene6_spoon_helping.jpg',
-  '../../../../images/scene7_thanking.jpg',
-  '../../../../images/scene8_mixing_bowl.jpg',
-  '../../../../images/scene9_taking_turns.jpg',
-  '../../../../images/scene10_turn_stirring.jpg',
-  '../../../../images/scene11_apologizing.jpg',
-  '../../../../images/scene12_waving_goodbye.jpg',
-  '../../../../images/scene13_kind_actions.jpg',
-  '../../../../images/scene14_waiting_turn.jpg',
-  '../../../../images/scene15_happy_friends.jpg'
+  // Zone 1
+  '../../../../images/G2/U2/G2U2Scene1Q1.png',  
+  '../../../../images/G2/U2/G2U2Scene1Q2.webp', 
+  '../../../../images/G2/U2/G2U2Scene1Q3.png',  
+  '../../../../images/G2/U2/G2U2Scene1Q4.webp',  
+  '../../../../images/G2/U2/Reflection_Question.webp', 
+
+  // Zone 2
+  '../../../../images/G2/U2/G2U2Scene1Q5.webp',  
+  '../../../../images/G2/U2/G2U2Scene1Q6.webp', 
+  '../../../../images/G2/U2/G2U2Scene1Q7.webp',  
+  '../../../../images/G2/U2/Reflection2_Question.webp', 
+
+  // Zone 3
+  '../../../../images/G2/U2/G2U2Scene1Q8.webp',  
+  '../../../../images/G2/U2/G2U2Scene1Q9.png',  
+  '../../../../images/G2/U2/G2U2Scene1Q10.webp',
+  '../../../../images/G2/U2/Reflection3_Question.webp', 
+
+  // Zone 4
+  '../../../../images/G2/U2/G2U2Scene1Q11.png', 
+  '../../../../images/G2/U2/G2U2Scene1Q12.png',  
+  '../../../../images/G2/U2/G2U2Scene1Q13.png',  
+  '../../../../images/G2/U2/Reflection4_Question.webp', 
+
+  // Zone 5
+  '../../../../images/G2/U2/G2U2Scene1Q18.webp', 
+  '../../../../images/G2/U2/G2U2Scene1Q19.png', 
+  '../../../../images/G2/U2/G2U2Scene1Q20.webp', 
+  '../../../../images/G2/U2/Reflection5_Question.png', 
 ];
 
 
 const audioPaths = [
   // Global
-    '../../../../audio/K2U2covergame.mp3',
+    '../../../../audio/G2/U2/G2U2covergame.mp3',
   '../../../../audio/kids-game-gaming-background-music-295075.mp3',
-  '../../../../audio/K2U2HowToPlay.mp3',
+  '../../../../audio/G2/U2/G2U2Howtoplay.mp3',
  
-
-  // // Scene 1
-  // '../../../../audio/Scene1Q.mp3',
-  // '../../../../audio/Scene1.mp3',
-  // '../../../../audio/Scene1H.mp3',
-  // '../../../../audio/Scene1E.mp3',
-  // '../../../../audio/Scene1O1.mp3',
-  // '../../../../audio/Scene1O2.mp3',
-  // '../../../../audio/Scene1O3.mp3',
-
-  // // Scene 2
-  // '../../../../audio/Scene2Q.mp3',
-  // '../../../../audio/Scene2.mp3',
-  // '../../../../audio/Scene2H.mp3',
-  // '../../../../audio/Scene2E.mp3',
-  // '../../../../audio/Scene2O1.mp3',
-  // '../../../../audio/Scene2O2.mp3',
-  // '../../../../audio/Scene2O3.mp3',
-
-  // // Scene 3
-  // '../../../../audio/Scene3Q.mp3',
-  // '../../../../audio/Scene3.mp3',
-  // '../../../../audio/Scene3H.mp3',
-  // '../../../../audio/Scene3E.mp3',
-  // '../../../../audio/Scene3O1.mp3',
-  // '../../../../audio/Scene3O2.mp3',
-  // '../../../../audio/Scene3O3.mp3',
-
-  // // Scene 4
-  // '../../../../audio/Scene4Q.mp3',
-  // '../../../../audio/Scene4.mp3',
-  // '../../../../audio/Scene4H.mp3',
-  // '../../../../audio/Scene4E.mp3',
-  // '../../../../audio/Scene4O1.mp3',
-  // '../../../../audio/Scene4O2.mp3',
-  // '../../../../audio/Scene4O3.mp3',
-
-  // // Scene 5
-  // '../../../../audio/Scene5Q.mp3',
-  // '../../../../audio/Scene5.mp3',
-  // '../../../../audio/Scene5H.mp3',
-  // '../../../../audio/Scene5E.mp3',
-  // '../../../../audio/Scene5O1.mp3',
-  // '../../../../audio/Scene5O2.mp3',
-  // '../../../../audio/Scene5O3.mp3',
-
-  // // Scene 6
-  // '../../../../audio/Scene6Q.mp3',
-  // '../../../../audio/Scene6.mp3',
-  // '../../../../audio/Scene6H.mp3',
-  // '../../../../audio/Scene6E.mp3',
-  // '../../../../audio/Scene6O1.mp3',
-  // '../../../../audio/Scene6O2.mp3',
-  // '../../../../audio/Scene6O3.mp3',
-
-  // // Scene 7
-  // '../../../../audio/Scene7Q.mp3',
-  // '../../../../audio/Scene7.mp3',
-  // '../../../../audio/Scene7H.mp3',
-  // '../../../../audio/Scene7E.mp3',
-  // '../../../../audio/Scene7O1.mp3',
-  // '../../../../audio/Scene7O2.mp3',
-  // '../../../../audio/Scene7O3.mp3',
-
-  // // Scene 8
-  // '../../../../audio/Scene8Q.mp3',
-  // '../../../../audio/Scene8.mp3',
-  // '../../../../audio/Scene8H.mp3',
-  // '../../../../audio/Scene8E.mp3',
-  // '../../../../audio/Scene8O1.mp3',
-  // '../../../../audio/Scene8O2.mp3',
-  // '../../../../audio/Scene8O3.mp3',
-
-  // // Scene 9
-  // '../../../../audio/Scene9Q.mp3',
-  // '../../../../audio/Scene9.mp3',
-  // '../../../../audio/Scene9H.mp3',
-  // '../../../../audio/Scene9E.mp3',
-  // '../../../../audio/Scene9O1.mp3',
-  // '../../../../audio/Scene9O2.mp3',
-  // '../../../../audio/Scene9O3.mp3',
-
-  // // Scene 10
-  // '../../../../audio/Scene10Q.mp3',
-  // '../../../../audio/Scene10.mp3',
-  // '../../../../audio/Scene10H.mp3',
-  // '../../../../audio/Scene10E.mp3',
-  // '../../../../audio/Scene10O1.mp3',
-  // '../../../../audio/Scene10O2.mp3',
-  // '../../../../audio/Scene10O3.mp3',
-
-  // // Scene 11
-  // '../../../../audio/Scene11Q.mp3',
-  // '../../../../audio/Scene11.mp3',
-  // '../../../../audio/Scene11H.mp3',
-  // '../../../../audio/Scene11E.mp3',
-  // '../../../../audio/Scene11O1.mp3',
-  // '../../../../audio/Scene11O2.mp3',
-  // '../../../../audio/Scene11O3.mp3',
-
-  // // Scene 12
-  // '../../../../audio/Scene12Q.mp3',
-  // '../../../../audio/Scene12.mp3',
-  // '../../../../audio/Scene12H.mp3',
-  // '../../../../audio/Scene12E.mp3',
-  // '../../../../audio/Scene12O1.mp3',
-  // '../../../../audio/Scene12O2.mp3',
-  // '../../../../audio/Scene12O3.mp3',
-
-  // // Scene 13
-  // '../../../../audio/Scene13Q.mp3',
-  // '../../../../audio/Scene13.mp3',
-  // '../../../../audio/Scene13H.mp3',
-  // '../../../../audio/Scene13E.mp3',
-  // '../../../../audio/Scene13O1.mp3',
-  // '../../../../audio/Scene13O2.mp3',
-  // '../../../../audio/Scene13O3.mp3',
-
-  // // Scene 14
-  // '../../../../audio/Scene14Q.mp3',
-  // '../../../../audio/Scene14.mp3',
-  // '../../../../audio/Scene14H.mp3',
-  // '../../../../audio/Scene14E.mp3',
-  // '../../../../audio/Scene14O1.mp3',
-  // '../../../../audio/Scene14O2.mp3',
-  // '../../../../audio/Scene14O3.mp3',
-
-  // // Scene 15
-  // '../../../../audio/Scene15Q.mp3',
-  // '../../../../audio/Scene15.mp3',
-  // '../../../../audio/Scene15H.mp3',
-  // '../../../../audio/Scene15E.mp3',
-  // '../../../../audio/Scene15O1.mp3',
-  // '../../../../audio/Scene15O2.mp3',
-  // '../../../../audio/Scene15O3.mp3'
 ];
 
 // ======== Optimized Preloader ========
@@ -232,7 +111,7 @@ Promise.allSettled(promises).then(() => {
     coverScreen.classList.remove('hidden');
 
     // 🔊 Play welcome message like K1
-    speak("K2U2covergame.mp3");
+    speak("G2U2covergame.mp3");
   }, 400);
 });
 
@@ -411,7 +290,7 @@ function showCompletionScreen() {
 
 function showInstructions() {
   instructionsModal.classList.add('show');
-  speak('K2U2HowToPlay.mp3');
+  speak('G2U2Howtoplay.mp3');
 }
 
 function closeInstructions() {
@@ -427,7 +306,7 @@ function closeInstructions() {
 }
 
 function replayInstructions() {
-speak('K2U2HowToPlay.mp3');
+speak('G2U2HowToPlay.mp3');
 }
 function backToHome() {
   gameContainer.classList.add('hidden');
@@ -477,7 +356,7 @@ function speak(audioFileName) {
   // Fade down background music before speech
   if (!isMusicMuted && !backgroundMusic.paused) fadeMusic(0.1, 400);
 
-  const audioPath = `../../../../audio/${audioFileName}`;
+  const audioPath = `../../../../audio/G2/U2/${audioFileName}`;
   const audio = new Audio(audioPath);
   // audio.volume = 1.0;
   audio.play().catch((err) => console.warn('Audio playback failed:', err));
