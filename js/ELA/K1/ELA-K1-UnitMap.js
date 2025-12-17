@@ -28,7 +28,7 @@
     loadedCount++;
     const percentage = Math.round((loadedCount / totalAssets) * 100);
     progressBar.style.width = percentage + '%';
-    loadingText.textContent = `Loading assets... ${percentage}%`;
+    loadingText.textContent = `Loading... ${percentage}%`;
     
     if (loadedCount >= totalAssets) {
       // All assets loaded
@@ -39,7 +39,7 @@
   }
   
   function finishLoading() {
-    loadingText.textContent = 'Ready! 🎉';
+   
     
     setTimeout(() => {
       loadingScreen.classList.add('fade-out');

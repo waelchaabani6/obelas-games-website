@@ -39,15 +39,21 @@ const loadingManager = {
     }
   },
   
-  complete: function() {
+ complete: function() {
+  setTimeout(() => {
+    this.loadingScreen.style.opacity = '0';
     setTimeout(() => {
-      this.loadingScreen.style.opacity = '0';
-      setTimeout(() => {
-        this.loadingScreen.style.display = 'none';
-        this.coverScreen.style.display = 'flex';
-      }, 500);
+      this.loadingScreen.style.display = 'none';
+      this.coverScreen.style.display = 'flex';
+
+      // 🔊 Play welcome speech when cover screen shows
+      stopSpeech();
+      audioManager.play('welcome');
+
     }, 500);
-  }
+  }, 500);
+}
+
 };
 
 // Game State
@@ -131,6 +137,7 @@ window.addEventListener('load', () => {
   backgroundMusic.play().then(() => {
     musicToggle.textContent = '🔊';
     fadeMusic(0.3, 2000);   // fade in over 2 seconds
+    audioManager.loadSound('welcome', '../../../../audio/G1U1Welcome.mp3');
   }).catch(() => {
     console.warn('Autoplay blocked — will start after user interaction.');
   });
@@ -166,7 +173,7 @@ const gameData = {
   characters: [
     { id: 'child', name: 'Child', image: '../../../../images/happy_girl.png', audio: '../../../../audio/child.mp3' },
     { id: 'fox', name: 'Fox', image: '../../../../images/fox.png', audio: '../../../../audio/fox.mp3' },
-    { id: 'cat', name: 'Cat', image: '../../../../images/cute_cat.png', audio: '../../../../audio/cat.mp3' },
+    { id: 'cat', name: 'Cat', image: '../../../../images/cute_cat.png', audio: '../../../../audio/catK2U1.mp3' },
     { id: 'falcon', name: 'Falcon', image: '../../../../images/falcon.png', audio: '../../../../audio/falcon.mp3' },
     { id: 'tiger', name: 'Tiger', image: '../../../../images/tiger.png', audio: '../../../../audio/tiger.mp3' },
     { id: 'ladybug', name: 'Ladybug', image: '../../../../images/ladybug.png', audio: '../../../../audio/ladybug.mp3' },
@@ -358,6 +365,12 @@ function startGame() {
     backgroundMusic.play().catch(() => {});
     fadeMusic(0.3, 1500);             // fade to 0.3 over 1.5 seconds
   }
+}
+
+function replayInstructions() {
+  // Always play the How-To audio, not the welcome
+  stopSpeech();
+   audioManager.play('howtoplay');
 }
 
 
